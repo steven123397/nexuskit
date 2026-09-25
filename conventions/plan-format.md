@@ -50,8 +50,10 @@ Goal Capsule 放在最前，便于快速定位。
 * **权威顺序与停止条件**：遇到冲突时以什么为准；出现什么情况必须停下报告。
 
 ### Product Contract
-必有：Summary（几句话说明提议）、Problem Frame（为什么要做，不重述方案）、Requirements。
-按需：Key Decisions、Success Criteria、Actors、Key Flows、Acceptance Examples、Scope Boundaries、Open Questions、Dependencies、Sources。判断标准是"这个 plan 有没有这一节要说的内容"，没有就省略，不写占位文字。
+必有：Summary（几句话说明提议）、Problem Frame（为什么要做，不重述方案；动机已在上游说清时写一两行即可）、Requirements。
+按需：Key Decisions、Success Criteria、Actors、Key Flows、Acceptance Examples、Scope Boundaries、Open Questions、Dependencies、Sources、How This Work Fits Together（本需求是更大请求拆分出的一部分时）。判断标准是"这个 plan 有没有这一节要说的内容"，没有就省略，不写占位文字。
+
+**语义标记**：How This Work Fits Together 一节的标题前一行放 `<!-- nk-section: work-relationships -->`。标题措辞可以改，标记不变；各技能按标记识别该节，修订时保留。
 
 ### Planning Contract
 关键技术决策（KTD）、需要图示才能说清时的高层设计、假设、约束、顺序、支撑决策的调研线索。按需包括 System-Wide Impact、Risks & Dependencies。
@@ -89,6 +91,8 @@ type: feat                     # feat / fix / refactor / chore / docs / perf / t
 date: 2026-09-25
 plan_contract: nk-plan/v1
 product_contract_source: nk-brainstorm   # 或 nk-plan（未经 brainstorm 直接规划）
+topic: paginated-sessions      # 可选：主题短名，续作时用于识别同一需求
+deepened: 2026-09-26           # 可选：nk-plan 第一次实质深化本 plan 的日期，影响续作时是否再次深化
 origin: docs/ideation/2026-09-20-reader-ideation.md   # 可选：上游文档
 execution: code                # 可选：code（默认）或 knowledge-work（非代码交付物）
 ---

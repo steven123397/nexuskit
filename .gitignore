@@ -1,0 +1,18 @@
+# OS / Temp
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+.vscode/
+.idea/
+
+# Scratch & Caches
+scratch/
+.cache/
+dist/
+build/
+node_modules/
+
+# Agent local states
+*.local.yaml
+*.local.json

@@ -88,3 +88,8 @@ description: Create commits that follow NexusKit commit cadence (R1–R6): one v
 ---
 
 > 主要参考：CE `ce-commit` (2026-09)、NexusKit 共享约定 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md)
+>
+> 与 CE 的主要差异及原因：
+> * 按"交付变化 / 状态记录"而非文件类型判定提交类型：文档本身也可能是交付物（例如本仓库的技能文件）。
+> * 不在默认分支上自动建分支：个人项目常直接在 main 上工作，分支策略交给项目工作流文档。
+> * 验证证据写进提交正文：证据随提交永久保存，不需要额外文档。

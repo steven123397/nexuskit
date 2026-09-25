@@ -65,3 +65,12 @@ description: Execute one implementation unit from a plan, an Issue, or a clear r
 ---
 
 > 主要参考：CE `ce-work` (2026-09)、Matt `tdd` / `implement`、NexusKit 共享约定
+>
+> 与 CE 的主要差异及原因：
+> * 未移植调度脚本、跨模型执行与默认并行波次：本体系是一个会话串行推进、主对话提交，不需要这层编排。
+> * 进度以带 U-ID 的提交为准，不为记进度修改 plan：plan 的每次改动都应是有意义的范围或决策变化。
+> * 一个会话默认一个单元、可顺延：避免小单元被迫逐个交接、产生多余的交接提交。
+> * 接手时"一致则继续，不一致才停"：`current.md` 是本仓库的单例文件，不像 CE 的交接文档那样来源不可信。
+> * 脏文件分两类：`current.md` 登记的半成品由本会话接管，其余一律不暂存。
+> * 不设代码审查关卡：审查发生在版本层面，由 `nk-review` 负责。
+> * 测试 seam 由 Agent 自选（改写 Matt `tdd` 的"先与用户确认"）：测试结构属于自主决断区。

@@ -1,15 +1,13 @@
 # 当前状态
 
 - **所在分支**：`main`
-- **版本/里程碑**：P1 执行三件套成稿审核问题修复完成（关联计划：[`docs/plans/2026-09-25-p1-execution-trio-plan.md`](plans/2026-09-25-p1-execution-trio-plan.md)）
+- **版本/里程碑**：P1 已结项；P2 进行中（按 Claude 与用户商定，P2 不单独写 plan，由 Claude 直接实施）
 - **已具备能力**：
-  - `nk-commit`：修正提交类型判定（区分“交付变化”与“纯状态记录”，不按 `.md` 扩展名一刀切，支持纯文档/规则交付物）；补全单独调用时的外来脏文件判定；路径相对技能目录解析。
-  - `nk-work`：完整恢复 CE 核心工程纪律（系统级因果 5 问、按已有测试状况划分的证据策略表、执行证据守则、测试场景完整性检查、已定决策保护）；删除红绿循环中的 Refactor；补全 Plan 充分性判断；恢复 Matt 好坏测试与可 Mock 性正反代码示例；路径相对技能目录解析。
-  - `nk-handoff`：强化 amend 时的显式路径限定（`-- docs/current.md`），杜绝带入工作区未完成代码；路径相对技能目录解析。
+  - 共享约定 6 份：[`conventions/`](../conventions/)
+  - `nk-commit`、`nk-work`、`nk-handoff`：执行闭环（接手 → 测试先行实现 → 按节奏提交 → 交接）。P1 的关键设计决策已写入各技能末尾的来源备注；P1 plan 已按生命周期规则删除，原文可在提交 `fbf6c6e` 中查到。
 - **验证结果**：
-  - 逐条对照方案 3.2 来源取舍表核对无遗漏；
-  - 检索禁词（`ce-code-review|cross-model|unit-workspace|return-to-caller`）零残留；
-  - 检索所有引用的共享约定路径均已采用相对技能目录的 `../conventions/` 或 `../../conventions/` 解析，无裸路径残留。
+  - P1 单元验证与两轮成稿评审通过（U4 评审问题已闭环，R3 amend 路径限定已补齐）。
+  - 未验证：真实项目中的端到端使用，统一放到"迁移与验收"阶段。
 
 ## 阻断与已知缺口
 
@@ -17,15 +15,15 @@
 
 ## 下一步
 
-- [ ] P1 结项，并在本仓库自用试用（推进 P2: `nk-brainstorm`, `nk-plan`, `nk-ideate`）
+- [ ] P2：`nk-brainstorm`、`nk-plan`、`nk-ideate`
 
 ## 阶段总览
 
 | 阶段 | 内容 | 完成标志 | 状态 |
 | :-- | :-- | :-- | :-- |
 | **P0** | 共享约定 | 6 份约定评审通过 | **已完成** |
-| **P1** | `nk-work`、`nk-commit`、`nk-handoff` | 单元验证与成稿评审通过；开始在本仓库自用 | **已完成 (评审问题已闭环)** |
-| **P2** | `nk-brainstorm`、`nk-plan`、`nk-ideate` | 单元验证与成稿评审通过；用 `nk-plan` 规划本仓库的后续阶段 | 待启动 |
+| **P1** | `nk-work`、`nk-commit`、`nk-handoff` | 单元验证与成稿评审通过；开始在本仓库自用 | **已完成** |
+| **P2** | `nk-brainstorm`、`nk-plan`、`nk-ideate` | 单元验证与成稿评审通过 | 进行中 |
 | **P3** | `nk-close`、`nk-compound` | 单元验证与成稿评审通过 | 待启动 |
 | **P4** | `nk-debug`、`nk-review`、`nk-simplify` | 单元验证与成稿评审通过 | 待启动 |
 | **P5** | `nk-wayfinder`、`nk-to-tasks`、`nk-wizard`、`nk-wait-what` | 单元验证与成稿评审通过 | 待启动 |

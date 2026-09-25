@@ -65,3 +65,8 @@ description: End a session cleanly: rewrite docs/current.md (state, evidence, bl
 ---
 
 > 主要参考：CE `ce-handoff` (2026-09)、Matt `handoff`、NexusKit 共享约定 [`../conventions/current-md.md`](../conventions/current-md.md)
+>
+> 与 CE 的主要差异及原因：
+> * 交接载体是仓库内单例 `docs/current.md`，而不是临时目录中的独立文件：不堆积、不丢失，新会话经 `AGENTS.md` 自动找到。
+> * 没有 resume 模式：会话开始时的核对由 `nk-work` 第 0 步负责。
+> * 交接时优先 amend 进本会话未推送的提交：尽量不产生纯文档提交。

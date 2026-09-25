@@ -52,9 +52,10 @@ description: End a session cleanly: rewrite docs/current.md (state, evidence, bl
      git commit --amend --no-edit -- docs/current.md
      ```
      *(若步骤 3 同时更新了 `AGENTS.md`，则在 `git add` 与 `git commit --amend --no-edit --` 末尾一并附上 `AGENTS.md`。)*
+   * 例外：本会话是规划会话、尚无本会话的提交时，不存在可 amend 的提交，走优先级 2。
 2. **优先级 2（R4 纯文档提交）**：
    * 若上一个提交已推送到远端，或本会话尚未发起过代码提交；
-   * 仅显式暂存交接文件（`docs/current.md` 及可能修改的 `AGENTS.md`），通过 `-F <temp-file> -- docs/current.md` 发起一次规范的纯文档交接提交，提交信息风格遵循项目惯例。
+   * 仅显式暂存交接文件：`docs/current.md`、可能修改的 `AGENTS.md`，以及**本会话产生的规划产出**（`docs/ideation/`、`docs/plans/` 中本会话新建或修改的文件、`CONCEPTS.md`）。通过 `-F <temp-file> -- <上述路径>` 发起一次纯文档交接提交，提交信息风格遵循项目惯例。规划产出与交接合并为这一次提交（见 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md) R4）。
 
 ### 5. 汇报交接摘要 (Handoff Report)
 向用户输出结构化汇报：

@@ -175,21 +175,40 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 2. **简报评审**（Claude）。
 3. **编写** `nk-xxx/SKILL.md` 与 `references/`。
 4. **成稿评审**（Claude）：对照简报与共享约定，检查冲突、遗漏、客户端相关写法、`description` 的触发准确度。
-5. **实战**：在 paper-30min 的真实任务上使用，问题记入简报末尾。
+5. **单元验证**：在临时仓库中按简报列出的验证方法逐项检查；实战验收统一放到"迁移与验收"阶段。
 
 简报在技能定稿后按 D3 的精神处理：有长期价值的取舍理由并入技能的来源备注，简报本身删除。
+
+### 验证策略
+
+各技能按接口配合（`nk-work` 读取 `nk-plan` 的产出，`nk-close` 清理 `nk-review` 的记录），半套体系混用 CE 无法测到正确的接口。因此：
+
+* **开发期**：每个阶段只做单元验证（临时仓库）和成稿评审，不在 paper-30min 上试用。
+* **自用试用**：P1 完成后，NexusKit 仓库自身的后续开发用已完成的 nk 技能推进，以便尽早暴露基础约定（提交节奏、`current.md`）的设计问题。
+* **整体验收**：全部技能完成后，paper-30min 一次性迁移到 NexusKit，按各阶段方案中的验收场景集中验收。
 
 ### 阶段
 
 | 阶段 | 内容 | 完成标志 |
 | :-- | :-- | :-- |
 | P0 | 共享约定 | 6 份约定评审通过 |
-| P1 | `nk-work`、`nk-commit`、`nk-handoff` | 在 paper-30min 完成至少一个实施单元，无多余的纯文档提交 |
-| P2 | `nk-brainstorm`、`nk-plan`、`nk-ideate` | 用 nk 规划一个 v2 需求，术语在规划中写入 `CONCEPTS.md` |
-| P3 | `nk-close`、`nk-compound` | 完成一次版本收尾，main 上不残留 plan/review |
-| P4 | `nk-debug`、`nk-review`、`nk-simplify` | 在真实缺陷与审查中使用 |
-| P5 | `nk-wayfinder`、`nk-to-tasks`、`nk-wizard`、`nk-wait-what` | 按需 |
+| P1 | `nk-work`、`nk-commit`、`nk-handoff` | 单元验证与成稿评审通过；开始在本仓库自用 |
+| P2 | `nk-brainstorm`、`nk-plan`、`nk-ideate` | 单元验证与成稿评审通过；用 `nk-plan` 规划本仓库的后续阶段 |
+| P3 | `nk-close`、`nk-compound` | 单元验证与成稿评审通过 |
+| P4 | `nk-debug`、`nk-review`、`nk-simplify` | 单元验证与成稿评审通过 |
+| P5 | `nk-wayfinder`、`nk-to-tasks`、`nk-wizard`、`nk-wait-what` | 单元验证与成稿评审通过 |
+| 迁移与验收 | paper-30min 从 CE 迁移到 NexusKit，集中验收 | 见下文 |
 | 打包 | 仿照 CE 结构做多 Agent 插件 | 各客户端可安装 |
+
+### 迁移与验收
+
+动手前单独写一份迁移方案，至少覆盖：
+
+* **现有产物的处理**：`docs/plans/`、`docs/reviews/` 按生命周期规则提炼后清理；`docs/current.md` 改写为 `conventions/current-md.md` 格式；现有 `docs/solutions/` 与 `CONCEPTS.md` 按新约定核对。
+* **指令文件**：`AGENTS.md` 改为指向 nk 约定与三个知识入口；`docs/release-workflow.md` 中与 CE 技能相关的表述同步更新。
+* **CE 的去留**：在 paper-30min 中停用还是并存（并存时一律显式调用 nk 技能）。
+* **验收场景**：汇总各阶段方案的验收场景，至少包括一次跨客户端接手，以及一个完整的"规划 → 实施 → 审查 → 收尾"周期。
+* **回退办法**：迁移前打标签，验收失败时可以回到 CE 体系。
 
 ---
 

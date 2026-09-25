@@ -12,7 +12,9 @@
 
 ## 📖 背景与诞生
 
-在实际生产级项目（如 `paper-30min`）的长期深度实践中，目前业界最知名的两套 AI Agent 技能体系展现了各自的强项与局限：
+在实际生产级项目（实战验证基地：[`D:\codex_project\paper-30min`](file:///D:/codex_project/paper-30min)）的长期深度实践中，目前业界最知名的两套 AI Agent 技能体系展现了各自的强项与局限：
+* **Matt Pocock Skills**（本地参考备份：[`C:\Users\29617\.agents\backups\mattpocock-skills-20260824-193425`](file:///C:/Users/29617/.agents/backups/mattpocock-skills-20260824-193425)）
+* **Compound Engineering**（本地安装路径：[`C:\Users\29617\.gemini\config\plugins\compound-engineering`](file:///C:/Users/29617/.gemini/config/plugins/compound-engineering)）
 
 | 维度 | Matt Pocock Skills | Compound Engineering (CE) | **NexusKit (`nk-*`)** |
 | :--- | :--- | :--- | :--- |
@@ -56,13 +58,13 @@
 * **`/nk-brainstorm`**：针对选中方向，快速澄清 WHAT 与边界，产出产品需求契约（Product Contract），拒绝无休止琐碎盘问。
 * **`/nk-plan`**：技术架构设计，产出统一技术方案（Unified Plan），定义接口契约、时序与测试策略。
 * **`/nk-to-tasks`**：将 Plan 切割为具有业务价值的垂直切片（Tracer Bullets），原生调用 `gh` CLI 发布至 GitHub Issues，标注依赖关系与上下文预算。
-* **`/nk-work`**：在清爽会话中认领单个未阻塞 Task，遵循测试先行（TDD）原则执行编码，自测通过后提交并关闭 Issue。
+* **`/nk-work`**：在清爽会话中认领单个未阻塞 Task，**深度融合 CE 的波次执行严谨性与 Matt 的测试先行（TDD/Red-Green-Refactor）原则**，自测通过后提交并关闭 Issue（无需单独拆分多余的 `nk-tdd` 指令）。
 * **`/nk-compound`**：双轨经验复利，提炼系统解决方案文档并复盘人机协作流程。
 
 ### 3. 诊断与质控（Diagnose & Quality）
 * **`/nk-debug`**：严苛五阶段因果排错循环。强迫在提出假设前建立 2 秒内可复现的极速变红反馈环（Tight Red-capable Loop），拒绝凭空猜想。
 * **`/nk-simplify`**：功能交付后的防腐化精简与代码重构，降低认知复杂度。
-* **`/nk-tdd`**：纯正的测试驱动开发（Red-Green-Refactor）心法指导。
+* **`/nk-review`**：针对当前 Task 或 PR 的多维度代码与规范审查。
 
 ### 4. 辅助与衔接（Utilities & Flow）
 * **`/nk-wizard`**：自动生成交互式 Bash 向导脚本，引导人类一步步走完繁琐的手动凭证配置、云端操作或数据迁移。

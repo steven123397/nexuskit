@@ -9,9 +9,10 @@
 
 ## 一、背景与实战反思 (Context & Motivation)
 
-在真实复杂业务（如科研文献快速研读工具 `paper-30min`）的长期高强度实战演进中，我们深度实践了目前 AI 编程领域最具代表性的两套体系：
-1. **Matt Pocock Skills**（以 TypeScript 大师 Matt Pocock 为代表的轻量结对体系）；
-2. **Compound Engineering (CE)**（EveryInc 团队开发的工业级复利工程插件）。
+在真实复杂业务的长期高强度实战演进中，我们深度实践了目前 AI 编程领域最具代表性的两套体系：
+* **实战验证基地项目**：[`D:\codex_project\paper-30min`](file:///D:/codex_project/paper-30min)（科研文献快速研读工具）
+* **Matt Pocock Skills**（本地参考备份：[`C:\Users\29617\.agents\backups\mattpocock-skills-20260824-193425`](file:///C:/Users/29617/.agents/backups/mattpocock-skills-20260824-193425)）
+* **Compound Engineering**（本地安装路径：[`C:\Users\29617\.gemini\config\plugins\compound-engineering`](file:///C:/Users/29617/.gemini/config/plugins/compound-engineering)）
 
 在数周的实战落地中，我们深刻体会到了两者的精妙之处，但也踩到了极度痛苦的工程暗坑。本构想文档旨在客观复盘两套体系的得失，并确立 **NexusKit (`nk-*`)** 的架构根基。
 
@@ -118,7 +119,7 @@ flowchart TD
         I[nk-ideate: 基于代码现状多角度发散 3~5 个高杠杆点] --> B[nk-brainstorm: 明确业务范围与契约，拒绝琐碎盘问]
         B --> P[nk-plan: 架构方案与技术时序设计]
         P --> T[nk-to-tasks: 垂直任务切片，推送到 GitHub Issues]
-        T --> K[nk-work: 单会话认领单个 Issue，测试先行交付，完结即关]
+        T --> K[nk-work: 融合 ce-work 工业执行与 Matt TDD 测试先行 / 交付即关]
         K --> C[nk-compound: 双轨复利入库 System Learning + Process Retro]
     end
 
@@ -133,9 +134,9 @@ flowchart TD
 
 | 阶段 | 核心技能 | 目标定位与关键点 |
 | :--- | :--- | :--- |
-| **Phase 1: 骨架与切片** | `nk-to-tasks`<br>`nk-work` | • 实现 Plan 到 GitHub Issues 的自动切片、打标、关联依赖<br>• 定义 Fresh Session 单任务高专注度执行规范 |
+| **Phase 1: 骨架与切片** | `nk-to-tasks`<br>`nk-work` | • 实现 Plan 到 GitHub Issues 的自动切片、打标、关联依赖<br>• 定义 Fresh Session 单任务高专注度执行规范（**融合 CE `ce-work` 的工业级波次与 Matt 的 TDD 测试先行纪律**） |
 | **Phase 2: 规划与设计** | `nk-brainstorm`<br>`nk-plan`<br>`nk-ideate` | • 摆脱繁琐 Grill，实现轻量克制的需求对齐（WHAT）<br>• 架构契约与测试设计（HOW）<br>• 基于代码库事实的多透镜方案生成 |
-| **Phase 3: 诊断与质控** | `nk-debug`<br>`nk-simplify`<br>`nk-tdd` | • 5 阶段因果链排错 + 2 秒极速变红反馈闭环<br>• 交付后代码防腐精简与测试驱动指导 |
+| **Phase 3: 诊断与质控** | `nk-debug`<br>`nk-simplify`<br>`nk-review` | • 5 阶段因果链排错 + 2 秒极速变红反馈闭环<br>• 交付后代码防腐精简与多维度代码评审 |
 | **Phase 4: 寻路与复利** | `nk-wayfinder`<br>`nk-compound` | • 史诗未知目标决策地图与探针派发<br>• 业务知识库（`solutions/`）与协作流程复盘（Retro）双轨落地 |
 
 ---

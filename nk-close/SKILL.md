@@ -71,6 +71,6 @@ description: Close a delivered version before merge or release (close version, p
 > * 未消费发想记录与推迟 plan 逐项询问用户、每轮最多 3 个——用户 2026-09-25 拍板；无人值守时采用推荐默认并在 `docs/current.md` 登记 `[待确认]`。
 > * 在六步法前增加第 0 步前置检查（单元提交核对、工作区清点、验证证据核对）：证据缺失时警告用户而非放行，依据 commit-cadence 第三节的通用纪律补入。
 > * 提炼的判断细则下沉到 `references/harvest.md`，SKILL.md 保持聚焦"怎么做"。
-> * `docs/reviews/` 目录不存在时跳过并说明：`nk-review` 是规划中的技能，尚未提供。
+> * `docs/reviews/` 目录不存在时跳过并说明（项目可能尚未运行过 `nk-review`）。
 > * 收尾提交显式限定本技能涉及的文件路径：收尾时工作区可能仍有后续版本的半成品，防止混入提交。
 > * 提交信息风格遵循项目惯例而不写死格式：与 nk-commit、nk-handoff 的口径一致。

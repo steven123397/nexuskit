@@ -37,7 +37,7 @@ argument-hint: "[可选：简短上下文 | refresh [范围提示]]"
 | 2 编写与自检 | `references/capture.md`、`references/frontmatter-checklist.md`、`references/claims-checklist.md` | 按 solution-schema 模板成文；frontmatter 与正文引用逐项自检 |
 | 3 术语补全 | `references/capture.md`、[`../conventions/concepts-vocabulary.md`](../conventions/concepts-vocabulary.md) | 只做 Add/Refine，不整库初建 |
 | 4 可选增强评审 | `references/capture.md` | 按 problem_type 映射 `references/agents/` 提示词；只评审文档，不改产品代码 |
-| 5 可见性与提交 | `references/capture.md` | 首运行检查 `AGENTS.md` 入口指引；按 R4.4 决定提交去向 |
+| 5 可见性与提交 | `references/capture.md` | 首运行检查 `AGENTS.md` 入口指引；按 R4 第 4 条决定提交去向 |
 
 ## 审计模式流程
 
@@ -53,7 +53,7 @@ argument-hint: "[可选：简短上下文 | refresh [范围提示]]"
 - **写入边界**：沉淀模式只写本次条目（或更新既有条目）、`CONCEPTS.md` 补全、缺指引时 `AGENTS.md` 的一行指引；审计模式只改知识库文件。两种模式都不改产品代码；条目与其点名的指导文件（SKILL.md、runbook、指令文件）冲突时只报告，不编辑指导文件。
 - **删除需要正面证据**：代码被删不构成删除条目的理由；不确定时保留（细则见 `references/audit.md`）。
 - **子代理**：`references/agents/` 是提示词资产而非具名 Agent——读取文件内容初始化通用子代理；客户端不支持子代理时由主会话内联完成。子代理不写产品文件、不执行 `git commit`。
-- **提交**：沉淀严格按 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md) R4.4；amend 必须显式限定路径（`git add <具体文件>` + `git commit --amend --no-edit -- <路径>`）。本技能自己发起提交时先读 [`../nk-commit/SKILL.md`](../nk-commit/SKILL.md)。
+- **提交**：沉淀严格按 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md) R4 第 4 条；amend 必须显式限定路径（`git add <具体文件>` + `git commit --amend --no-edit -- <路径>`）。本技能自己发起提交时先读 [`../nk-commit/SKILL.md`](../nk-commit/SKILL.md)。
 - **提问**：按 [`../conventions/decision-autonomy.md`](../conventions/decision-autonomy.md) 批量选项提问；无人值守时的待确认项在 `docs/current.md` 登记 `[待确认]`。
 
 ---
@@ -65,6 +65,6 @@ argument-hint: "[可选：简短上下文 | refresh [范围提示]]"
 > * scripts/ 整体删除：两份校验脚本转写为 `references/frontmatter-checklist.md` 与 `references/claims-checklist.md` 的人工核对清单；session-history 脚本组删除，改用当前会话上下文 + `git log` 定位刚解决的问题，依赖脚本的 session-historian 提示词随之删除。
 > * CE 基础设施删除：`docs_root` / `.compound-engineering` 配置层、Compound Packs、Proof 发布、Slack、auto-memory 与浏览器相关步骤。
 > * 模式裁剪：去掉 mode/depth token 体系（interactive/non-interactive、full/lightweight），沉淀走单一流程；无人值守场景由 `../conventions/decision-autonomy.md` 统一覆盖。
-> * 提交纪律改为 commit-cadence R4.4（优先随代码提交、未推送则限定路径 amend、已推送则留工作区），而非 CE 的独立文档提交与建分支。
+> * 提交纪律改为 commit-cadence R4 第 4 条（优先随代码提交、未推送则限定路径 amend、已推送则留工作区），而非 CE 的独立文档提交与建分支。
 > * 可见性检查并入首运行职责：按 artifact-lifecycle 第二章补 `AGENTS.md` 指引，而非每次运行单独征询。
 > * 术语表规则归 `../conventions/concepts-vocabulary.md`：本技能沉淀模式只做 Add/Refine，Fold/Retire/Scrub 与整库初建归审计模式。

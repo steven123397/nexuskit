@@ -63,7 +63,7 @@
 
 **可见性（首次在某项目运行时必查）**：按 [`../../conventions/artifact-lifecycle.md`](../../conventions/artifact-lifecycle.md) 第二章，检查目标项目根的 `AGENTS.md`（或等价全局指令文件）是否有指向 `docs/current.md`、`docs/solutions/`、`CONCEPTS.md` 的指引；缺则补一行最小指引，描述性语气（如"在已记录领域实施或排障时相关"），不写"必须先检索"式命令句。`CONCEPTS.md` 不存在时不补它的指引，不催促项目采纳。
 
-**提交去向（R4.4，见 [`../../conventions/commit-cadence.md`](../../conventions/commit-cadence.md)）**：
+**提交去向（R4 第 4 条，见 [`../../conventions/commit-cadence.md`](../../conventions/commit-cadence.md)）**：
 
 1. 优先在修复/特性提交**之前**完成沉淀，随代码与测试一同提交；
 2. 代码已提交但尚未推送 → 按 R3 amend，且必须显式限定路径，防止把工作区半成品带进提交：

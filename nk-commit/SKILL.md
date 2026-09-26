@@ -47,12 +47,12 @@ description: Create commits that follow NexusKit commit cadence (R1–R6): one v
      * **其他中途状态改动（R2 暂不提交）**：不属于上述情况的纯状态变动（如中途微调 `current.md`），**终止提交**，改动保留在工作区，告知用户该状态记录将随下一个交付提交一并入库。
 
 ### 2. 分支策略 (Branch)
-遵循项目既有策略（K5）：
+遵循项目既有策略（见 [`../conventions/artifact-lifecycle.md`](../conventions/artifact-lifecycle.md)）：
 * 检查项目工作流文档（由 `AGENTS.md` 索引，如 `docs/release-workflow.md`）。若项目明确规定了分支模式，遵照执行。
 * 若项目未作规定，**留在当前所在分支工作，不自动创建额外特性分支**（在默认分支/main 上提交时用一句话说明即可）。
 
 ### 3. 确定提交风格 (Convention)
-按以下优先级确定提交信息格式（K11）：
+按以下优先级确定提交信息格式：
 `项目自定约定 -> 近期 Git Log 风格 -> Conventional Commits (type(scope): description)`
 
 * 使用 Conventional Commits 时：修复或补齐缺陷用 `fix:`，新增能力用 `feat:`，文档用 `docs:`，重构用 `refactor:`。
@@ -66,7 +66,7 @@ description: Create commits that follow NexusKit commit cadence (R1–R6): one v
 * **主题行**：说明取得的成果（现在能做什么、修好了什么），不罗列修改的文件名。有 U-ID 时末尾附带 `(U-ID)`。
 * **正文**：
   * 若设计动机或关键取舍不够直观，用 1~2 句话简述原因。
-  * **验证证据（K10）**：用 1~3 行记录运行过的验证命令、实际结果与未验证项。  
+  * **验证证据**：用 1~3 行记录运行过的验证命令、实际结果与未验证项。  
     例如：
     ```text
     Verified: cargo test parser (42/42 passed).
@@ -75,7 +75,7 @@ description: Create commits that follow NexusKit commit cadence (R1–R6): one v
 
 ### 6. 显式暂存与限定提交 (Stage & Commit)
 * **显式暂存**：只暂存明确属于本次提交的文件列表（`git add path1 path2`），不使用 `git add -A` 或 `git add .`。
-* **隔离外来脏文件（K8）**：跳过非本单元所属的外来脏文件。当 `/nk-commit` 被单独调用时，通过读取 `docs/current.md` 的“工作区未提交改动”字段区分本会话半成品与外来脏文件；若仍无法判断归属，向用户询问确认。
+* **隔离外来脏文件**：跳过非本单元所属的外来脏文件。当 `/nk-commit` 被单独调用时，通过读取 `docs/current.md` 的“工作区未提交改动”字段区分本会话半成品与外来脏文件；若仍无法判断归属，向用户询问确认。
 * **文件传递提交信息（防转义）**：将完整的提交说明写入仓库外的临时文件，然后执行带路径限定的提交命令：
   ```bash
   git commit -F <temp-message-file> -- path1 path2 ...

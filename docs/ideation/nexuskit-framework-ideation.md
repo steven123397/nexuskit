@@ -60,7 +60,7 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 | D2 | **`docs/current.md` 是跨会话入口** | 新会话从这里进入。只记当前能力、验证结果、阻断项、下一步、所在分支；不记操作流水。 |
 | D3 | **所有产物都有生命周期** | 每类产物诞生时就确定终点（见第四章）。清理挂在"版本收尾"上，不挂在 PR 上；PR 可选。 |
 | D4 | **plan 与审查记录"活时在本地，死后从 main 消失"** | 执行期留在版本分支、随代码一起修改提交；收尾时提炼长期价值后删除，git 历史保留原文。 |
-| D5 | **Issue 负责跨 plan 的事务** | 待办、疑难缺陷、推迟的工作、wayfinder 探针。plan 内部的实施单元不拆 Issue，靠 plan + `current.md` 接力。`nk-to-tasks` 降为可选（并行或长期挂起时才用）。 |
+| D5 | **Issue 负责跨 plan 的事务** | 待办、疑难缺陷、推迟的工作、wayfinder 探针。plan 内部的实施单元不拆 Issue，靠 plan + `current.md` 接力。不设 plan→Issue 的转换技能（长期挂起由 `nk-close` 覆盖，并行认领按 YAGNI 不建）；Issue 格式由 `conventions/issue-writing.md` 统一约定，开发中冒出的 bug/需求由 `nk-to-issue` 核实分析后落档。 |
 | D6 | **去掉 grill；术语即时写入** | 以 CE 的 ideate/brainstorm 为主体。Agent 对可逆、局部、有惯例可循的事自行决定并注明理由；只对范围变化、不可逆、数据/API 契约类分歧询问人。术语写入时机取 Matt（brainstorm/plan 中敲定即写），格式规则取 CE（`concepts-vocabulary.md`）。 |
 | D7 | **ADR 并入 `solutions/`** | 取消 `docs/adr/`，"决策"作为 solution 的一种类型。入选门槛沿用 Matt 三条：难以撤回、无背景会困惑、确有取舍。D4 删除 plan 后，决策理由需要去处，这正是收尾时提炼的主要内容。 |
 | D8 | **自主体系，审慎派生** | 以 CE/Matt 原文为起点改写，按自己的画像取舍；每个技能记录一行来源备注，不维护同步机制。删减原则见第七章。 |
@@ -124,7 +124,7 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 | `nk-review` | 代码审查；结果写版本分支 `docs/reviews/` | CE `ce-code-review` + Matt `code-review` | P4 |
 | `nk-simplify` | 交付后精简 | CE `ce-simplify-code` | P4 |
 | `nk-wayfinder` | 超大未知目标的决策地图与探针（Issue 承载） | Matt `wayfinder` | P5 |
-| `nk-to-tasks` | 可选：把 plan 拆成 Issue（并行或长期挂起时） | Matt `to-tickets` | P5 |
+| `nk-to-issue` | 核实并分析开发中冒出的 bug/新需求，落档为可接手的 Issue | Matt `triage`（核实与 brief） | P5 |
 | `nk-wizard` | 生成引导人完成手动操作的交互脚本 | Matt `wizard` | P5 |
 | `nk-wait-what` | 暂停发散，重新梳理上下文 | Matt `wait-what` | P5 |
 
@@ -196,7 +196,7 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 | P2 | `nk-brainstorm`、`nk-plan`、`nk-ideate` | 单元验证与成稿评审通过；用 `nk-plan` 规划本仓库的后续阶段 |
 | P3 | `nk-close`、`nk-compound` | 单元验证与成稿评审通过 |
 | P4 | `nk-debug`、`nk-review`、`nk-simplify` | 单元验证与成稿评审通过 |
-| P5 | `nk-wayfinder`、`nk-to-tasks`、`nk-wizard`、`nk-wait-what` | 单元验证与成稿评审通过 |
+| P5 | `nk-wayfinder`、`nk-to-issue`、`nk-wizard`、`nk-wait-what` | 单元验证与成稿评审通过 |
 | 迁移与验收 | paper-30min 从 CE 迁移到 NexusKit，集中验收 | 见下文 |
 | 打包 | 仿照 CE 结构做多 Agent 插件 | 各客户端可安装 |
 

@@ -26,8 +26,13 @@
 
 按用户 2026-09-26 拍板的顺序推进（迁移验收往后移，先打包再实测）：
 
-- [ ] **迁仓库**（用户将在新对话中执行）：仓库迁出 `~/.agents/skills` 加载目录（建议 `D:\codex_project
-exuskit`），GitHub 仓库改名建议 `nexuskit-skills`；加载目录只留 `nk-*/` + `conventions/` 的 junction
+- [ ] **迁仓库**（用户在新对话中执行，方案已定）：
+  1. `gh repo rename nexuskit-skills`（旧 URL 自动重定向）
+  2. `mv` 整个目录到 `D:\codex_project
+exuskit`（比 push+clone 省事：未跟踪文件与 .git 随目录一起走）
+  3. `git remote set-url origin git@github.com:steven123397/nexuskit-skills.git`
+  4. 重建加载目录：`~/.agents/skills` 下只建 `nk-*`、`ask-ljq`、`conventions` 的 junction（`mklink /J`，不需要管理员）
+  5. 验证：新位置 `python tests/run_checks.py` 全绿；客户端照常加载
 - [x] **P6 已完成**：`nk-init`（首次启用初始化）+ `ask-ljq`（场景路由器，故意不带 nk- 前缀，作者个人元素）
 - [ ] **打包 v0.1.0**：三形态——Claude plugin、Kimi plugin（格式待查）、npx 安装器（仿 Matt skills-cli；conventions/ 随安装一起复制解决共享问题）
 - [ ] **迁移与验收**：paper-30min 从 CE 迁移到 NexusKit，首跑 nk-init；按 RFC 第八章先写迁移方案（产物处理、指令文档更新、CE 停用或并存、验收场景、迁移前打 tag 可回退）

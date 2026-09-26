@@ -129,7 +129,7 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 | `nk-wizard` | 生成引导人完成手动操作的交互脚本 | Matt `wizard` | P5 |
 | `nk-wait-what` | 暂停发散，重新梳理上下文 | Matt `wait-what` | P5 |
 | `nk-init` | 目标仓库首次启用 NexusKit 的初始化 | 新增（灵感源自 Matt `setup-matt-pocock-skills`） | P6 |
-| `ask-ljq` | 场景路由器：当前情境该用哪个技能/流程（故意不带 nk- 前缀，作者个人元素） | Matt `ask-matt` | P6 |
+| `nk-ask-ljq` | 场景路由器：当前情境该用哪个技能/流程（名字含作者缩写，个人元素） | Matt `ask-matt` | P6 |
 
 全部技能已实现（2026-09-26）；尚未迁移的项目可继续用 CE 原版过渡。
 
@@ -201,7 +201,7 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 | P3 | `nk-close`、`nk-compound` | 单元验证与成稿评审通过 |
 | P4 | `nk-debug`、`nk-review`、`nk-simplify` | 单元验证与成稿评审通过 |
 | P5 | `nk-wayfinder`、`nk-to-issue`、`nk-wizard`、`nk-wait-what` | 单元验证与成稿评审通过 |
-| P6 | `nk-init`、`ask-ljq` | 单元验证与成稿评审通过 |
+| P6 | `nk-init`、`nk-ask-ljq` | 单元验证与成稿评审通过 |
 | 迁移与验收 | paper-30min 从 CE 迁移到 NexusKit，集中验收 | 见下文 |
 | 打包 | 仿照 CE 结构做多 Agent 插件 | 各客户端可安装 |
 

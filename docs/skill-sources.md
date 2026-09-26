@@ -156,12 +156,12 @@
 * 负向清单写进流程：不建 `CONCEPTS.md`（由第一个合格词条创建）、不建空目录（git 不跟踪空目录）。
 * 带 `disable-model-invocation: true`（手动技能）；提交遵循 commit-cadence。
 
-## ask-ljq
+## nk-ask-ljq
 
 主要参考：Matt `ask-matt`（2026-08 备份）
 
 关键设计决定：
-* 故意不带 `nk-` 前缀——作者（ljq）的个人元素，用户拍板，v1.0.0 前不设限。
+* 名字含作者缩写 ljq（个人元素）；曾定名无前缀的 `ask-ljq`，后统一回 `nk-` 前缀保持命名一致。
 * Matt 的"main flow + on-ramps"单主线结构改为"工具箱宣言 → 参考路径 → 按场景入口"：落实 D1（工具箱不是流水线），路由而不规训，明说每步可单独用、可跳过、可从中间进入。
 * 保留"问我就行"的作者口吻与语境卫生建议（`docs/current.md` 接手、Smart Zone <100k/理想 <30k、单元边界交接）。
 * 新增 R1–R6 提交节奏一句话版（细节路由给 `nk-commit`）；删去 phase boundaries 决策树、prototype/triage/vocabulary layer 等 NexusKit 无对应物的内容。

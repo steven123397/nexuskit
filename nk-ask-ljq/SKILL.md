@@ -1,5 +1,5 @@
 ---
-name: ask-ljq
+name: nk-ask-ljq
 description: Route the current situation to the right NexusKit skill or workflow — which skill should I use, how do I do X with this kit, where is the entry point. 该用哪个技能、怎么用、从哪开始、流程、路由。
 disable-model-invocation: true
 ---

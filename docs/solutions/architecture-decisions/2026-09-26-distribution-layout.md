@@ -31,4 +31,4 @@ NexusKit 需要三种分发形态（Kimi 插件 / Codex 插件 / npx skills CLI�
 - 新增技能：`name` 必须与目录同名，description 中的 `: ` 必须加引号（严格 YAML 消费方存在，run_checks 已锁定）。
 - 新增共享约定文件：只需放进 `skills/conventions/` 并在其 SKILL.md 索引中加一行，三形态自动携带。
 - Codex 市场安装的必需文件是 `.agents/plugins/marketplace.json`（不是 `.codex-plugin/plugin.json`，后者是插件清单）；缺它报 "marketplace root does not contain a supported manifest"。
-- 已知环境问题：Kimi 的 GitHub URL 安装在最后一步临时目录 rename 时可能 EPERM（Defender 对带 Mark-of-the-Web 文件的瞬态锁），与网络无关；本地路径安装（`/plugins install <本地目录>`）是可靠兜底。
+- 已知环境问题：Kimi 的 GitHub URL 安装在 Windows 上最后一步临时目录 rename 时可能 EPERM（Defender 对带 Mark-of-the-Web 文件的瞬态锁），与网络、清单无关；同一 URL 在 WSL 中安装成功（2026-09-26 实测）。Windows 上的兜底：本地路径安装（`/plugins install <本地目录>`）或重试。

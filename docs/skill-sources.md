@@ -1,6 +1,8 @@
 # 技能来源与差异记录 (Skill Sources)
 
 > 维护者向文档：每个技能改写自哪些上游、做了什么取舍、为什么。执行技能的 Agent 不需要读它；修改技能或考虑吸收上游更新时来这里查。由 `AGENTS.md` 指向本文件。
+>
+> 上游正式克隆（只读参考，不入本仓库）：`D:\codex_project\upstreams\compound-engineering-plugin` 与 `D:\codex_project\upstreams\matt-pocock-skills`。
 
 ---
 

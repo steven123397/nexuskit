@@ -82,6 +82,13 @@ tags:
 status: accepted # accepted | superseded | deprecated
 superseded_by: null # 若被后续新决策取代，填写相对路径，如 ../architecture-patterns/new-choice.md
 
+# --- 审计标记 (选填，仅由 /nk-compound 审计模式在证据不足时写入) ---
+# status: stale 与上面的决策生命周期取值不混用：决策条目按 accepted/superseded/deprecated 流转；
+# 任何条目疑似过期但删除/替换证据不足时，标记 stale 并写下原因与日期，提示下次遭遇该领域时重建。
+status: stale
+stale_reason: "为什么疑似过期、缺什么证据"
+stale_date: 2026-09-26
+
 # --- 外部退役触发条件 (选填) ---
 retire_when: "当外部上游 bug 修复或某一特定外部依赖版本升级后可废除此项"
 ---

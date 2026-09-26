@@ -24,7 +24,13 @@
 
 ## 下一步
 
-- [ ] **迁移与验收**：paper-30min 从 CE 迁移到 NexusKit，按 RFC 第八章先写迁移方案（五件事：现有 plans/reviews/current.md 处理、AGENTS.md 与工作流文档更新、CE 停用或并存、验收场景、迁移前打 tag 可回退）
+按用户 2026-09-26 拍板的顺序推进（迁移验收往后移，先打包再实测）：
+
+- [ ] **迁仓库**（用户将在新对话中执行）：仓库迁出 `~/.agents/skills` 加载目录（建议 `D:\codex_project
+exuskit`），GitHub 仓库改名建议 `nexuskit-skills`；加载目录只留 `nk-*/` + `conventions/` 的 junction
+- [ ] **P6**：`nk-init`（目标仓库首次启用初始化，源自 Matt setup 技能）+ 路由器技能（源自 Matt ask-matt；命名待定：nk-ask / nk-how / nk-how-to-use）
+- [ ] **打包 v0.1.0**：三形态——Claude plugin、Kimi plugin（格式待查）、npx 安装器（仿 Matt skills-cli；conventions/ 随安装一起复制解决共享问题）
+- [ ] **迁移与验收**：paper-30min 从 CE 迁移到 NexusKit，首跑 nk-init；按 RFC 第八章先写迁移方案（产物处理、指令文档更新、CE 停用或并存、验收场景、迁移前打 tag 可回退）
 
 ## 阶段总览
 

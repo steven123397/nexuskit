@@ -17,7 +17,7 @@
 
 ## nk-close
 
-主要参考：NexusKit 共享约定 [`../conventions/artifact-lifecycle.md`](../conventions/artifact-lifecycle.md)（本技能为其第五章的可执行展开）
+主要参考：NexusKit 共享约定 [`../conventions/artifact-lifecycle.md`](../skills/conventions/artifact-lifecycle.md)（本技能为其第五章的可执行展开）
 关键设计决定：
 * 未消费发想记录与推迟 plan 逐项询问用户、每轮最多 3 个——用户 2026-09-25 拍板；无人值守时采用推荐默认并在 `docs/current.md` 登记 `[待确认]`。
 * 在六步法前增加第 0 步前置检查（单元提交核对、工作区清点、验证证据核对）：证据缺失时警告用户而非放行，依据 commit-cadence 第三节的通用纪律补入。
@@ -28,7 +28,7 @@
 
 ## nk-commit
 
-主要参考：CE `ce-commit` (2026-09)、NexusKit 共享约定 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md)
+主要参考：CE `ce-commit` (2026-09)、NexusKit 共享约定 [`../conventions/commit-cadence.md`](../skills/conventions/commit-cadence.md)
 与 CE 的主要差异及原因：
 * 按"交付变化 / 状态记录"而非文件类型判定提交类型：文档本身也可能是交付物（例如本仓库的技能文件）。
 * 不在默认分支上自动建分支：个人项目常直接在 main 上工作，分支策略交给项目工作流文档。
@@ -59,7 +59,7 @@
 
 ## nk-handoff
 
-主要参考：CE `ce-handoff` (2026-09)、Matt `handoff`、NexusKit 共享约定 [`../conventions/current-md.md`](../conventions/current-md.md)
+主要参考：CE `ce-handoff` (2026-09)、Matt `handoff`、NexusKit 共享约定 [`../conventions/current-md.md`](../skills/conventions/current-md.md)
 与 CE 的主要差异及原因：
 * 交接载体是仓库内单例 `docs/current.md`，而不是临时目录中的独立文件：不堆积、不丢失，新会话经 `AGENTS.md` 自动找到。
 * 没有 resume 模式：会话开始时的核对由 `nk-work` 第 0 步负责。
@@ -67,7 +67,7 @@
 
 ## nk-ideate
 
-主要参考：CE `ce-ideate` (2026-09)、NexusKit 共享约定 [`../conventions/`](../conventions/)
+主要参考：CE `ce-ideate` (2026-09)、NexusKit 共享约定 [`../conventions/`](../skills/conventions/)
 与 CE 的主要差异及原因：
 * 只输出 Markdown，去掉 HTML 渲染、浏览器打开与 Proof 发布：用户选择统一使用 Markdown，发想记录由人和 Agent 都直接读文件。
 * 去掉 `.compound-engineering` 配置层与 `docs_root`：NexusKit 不使用 CE 配置文件，产物位置固定在 `docs/ideation/`。
@@ -102,7 +102,7 @@
 
 ## nk-simplify
 
-主要参考：CE `ce-simplify-code` (2026-09)、NexusKit 共享约定 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md)
+主要参考：CE `ce-simplify-code` (2026-09)、NexusKit 共享约定 [`../conventions/commit-cadence.md`](../skills/conventions/commit-cadence.md)
 与 CE 的主要差异及原因：
 * 删除 CE 的平台编排细节（受限派发、代理生命周期、模型档位、权限模式参数、任务跟踪提示、阻塞提问工具的探测规则）：NexusKit 客户端中立，只保留“支持子代理则派发、否则内联”的一条规则。
 * 三视角从“固定并行三个”改为“按信号选用、默认全跑”：NexusKit 以单会话串行为主，小范围改动不必机械跑满三个视角。
@@ -112,7 +112,7 @@
 
 ## nk-to-issue
 
-主要参考：Matt `triage`（核实与 brief 部分）、NexusKit 共享约定 [`../conventions/issue-writing.md`](../conventions/issue-writing.md)
+主要参考：Matt `triage`（核实与 brief 部分）、NexusKit 共享约定 [`../conventions/issue-writing.md`](../skills/conventions/issue-writing.md)
 与 Matt `triage` 的主要差异及原因：
 * **不是状态机形态**：Matt 围绕 maintainer 的 labels/buckets/state roles（needs-triage、ready-for-agent 等）组织批量分诊；NexusKit 是个人项目、用户自己就是 maintainer，没有"分诊队列"，本技能只处理单条"开发中冒出的发现"，状态流转交给 Issue 平台自身。
 * 删除 external PR surface、AI disclaimer 与 setup 配置探测：个人项目无外部贡献者分诊需求，产物位置由 artifact-lifecycle 约定固定。

@@ -34,7 +34,11 @@ def check(name, problems):
 
 
 def md_files():
-    return [f for f in glob.glob("**/*.md", recursive=True) if not f.startswith(".git")]
+    return [
+        f.replace(os.sep, "/")
+        for f in glob.glob("**/*.md", recursive=True)
+        if not f.startswith(".git")
+    ]
 
 
 def strip_fences(text):
@@ -49,7 +53,7 @@ def check_links():
     problems = []
     for f in md_files():
         base = os.path.dirname(f)
-        in_skill = f.startswith("nk-")
+        in_skill = f.startswith("skills/nk-")
         text = strip_fences(open(f, encoding="utf-8").read())
         for m in re.finditer(r"\]\(([^)\s#]+)(#[^)]*)?\)", text):
             link = m.group(1)
@@ -67,16 +71,16 @@ def check_links():
 # --- 2. reference resolution ---
 def check_references():
     problems = []
-    skill_dirs = {d for d in glob.glob("nk-*") if os.path.isdir(d)}
+    skill_dirs = {os.path.basename(d) for d in glob.glob("skills/nk-*") if os.path.isdir(d)}
     for f in md_files():
-        if not (f.startswith("nk-") or f.startswith("conventions")):
+        if not (f.startswith("skills/nk-") or f.startswith("skills/conventions")):
             continue
         text = strip_fences(open(f, encoding="utf-8").read())
         for m in re.finditer(r"[（(]K[0-9]+[）)]", text):
             problems.append(f"{f}: dangling K-code label {m.group(0)} (contracts live in conventions/)")
         for m in re.finditer(r"\bR[0-9]+\.[0-9]+\b", text):
             problems.append(f"{f}: decimal cadence ref {m.group(0)} does not exist (use e.g. 'R4 第 4 条')")
-        if f.startswith("nk-"):
+        if f.startswith("skills/nk-"):
             for m in re.finditer(r"\b(nk-[a-z][a-z0-9-]*)\b", text):
                 name = m.group(1)
                 if name in SKILL_REF_DENYLIST:
@@ -90,7 +94,7 @@ def check_references():
 def check_byte_budget():
     problems = []
     over_now = set()
-    for f in glob.glob("nk-*/SKILL.md"):
+    for f in glob.glob("skills/nk-*/SKILL.md"):
         size = os.path.getsize(f)
         if size > BYTE_LIMIT:
             over_now.add(f)
@@ -114,7 +118,7 @@ def check_prompt_copies():
         manifest[name.strip()] = [p.strip() for p in paths.split(",")]
 
     on_disk = {}
-    for f in glob.glob("nk-*/references/agents/*.md") + glob.glob("nk-*/references/personas/*.md"):
+    for f in glob.glob("skills/nk-*/references/agents/*.md") + glob.glob("skills/nk-*/references/personas/*.md"):
         on_disk.setdefault(os.path.basename(f), []).append(f.replace(os.sep, "/"))
     on_disk = {k: sorted(v) for k, v in on_disk.items() if len(v) > 1}
 

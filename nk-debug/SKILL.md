@@ -58,15 +58,3 @@ flowchart LR
 
 ## 子代理支持 (Subagents，可选)
 若客户端支持子代理：假设分属互不依赖的子系统时，可并行派发只读调查子代理（各自携带明确假设与结构化证据返回格式）；子代理不改代码、不执行 `git commit`，证据回传主会话核对。不支持子代理则主会话按假设排序串行执行同样的探针。
-
----
-
-> 主要参考：CE `ce-debug` (2026-09)、Matt `diagnosing-bugs`、NexusKit 共享约定
->
-> 与上游的主要差异及原因：
-> * 复现优先（Matt 的 feedback loop）前置为流程灵魂：CE 把复现放在调查阶段的一个小节，本技能将"没有红得起来的复现就不得进入假设阶段"立为硬关卡。
-> * 删除 CE 的编排与平台层：pipeline / return-to-caller 模式（mode 令牌、JSON 返回契约）、PR 路由、分支自动创建、branding、Artifact Root / `docs_root` 配置解析——NexusKit 没有流水线编排层，产物位置由约定固定，分支与 PR 策略归项目，提交统一走 nk-commit + commit-cadence。
-> * 删除 post-fix-handoff 的修复后精简/审查编排：审查发生在版本层面（nk-review）；其通用残值（尾部改动后复跑回归、遗留发现落地记录）并入 references/fix.md 与收尾步骤。
-> * issue-of-record 规则简化：无法本轮定位的疑难缺陷本来就要按 artifact-lifecycle 转 Issue，无需禁令。
-> * Matt 的 `hitl-loop.template.sh` 与 `agents/openai.yaml` 删除：体系纯 Markdown 约定驱动、客户端中立；人工在环复现转写为 references/reproduction.md 第十种回路。
-> * defense-in-depth.md 保留为独立 reference：35 行的通用分层防御模式，触发条件清晰，便于按需加载。

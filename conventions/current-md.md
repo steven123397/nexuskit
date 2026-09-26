@@ -26,6 +26,7 @@
 # 当前状态
 
 - **所在分支**：`feat/v2-parser`（若为主干写 `main`）
+- **HEAD**：`<short-hash>`（交接时的提交；接手方用 `git rev-parse --short HEAD` 比对，发现中间有新提交时向用户报告）
 - **版本/里程碑**：v2.0.0-alpha（关联计划：`docs/plans/2026-09-25-parser-refactor.md`）
 - **已具备能力**：
   - 完成 AST 核心解析器重构，支持流式 token 输出。

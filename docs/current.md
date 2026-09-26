@@ -11,6 +11,7 @@
   - 其余：`nk-wayfinder`（决策地图，GitHub Issues 承载）、`nk-to-issue`（核实分析后落档）、`nk-wizard`（手动操作引导脚本）、`nk-wait-what`（重新对齐）。
   - 设计变更：`nk-to-tasks` 取消（长期挂起由 nk-close 覆盖，并行认领按 YAGNI 不建）——用户 2026-09-26 拍板。
   - 工程保障：`tests/run_checks.py` 四项机械检查（链接完整性 / K-R 引用解析 / SKILL.md 8000 字节上限带 ratchet / 重复提示词清单锁定）+ GitHub Actions CI（ubuntu + windows）。
+  - 来源记录集中化：技能来源/取舍全部移入 [`docs/skill-sources.md`](skill-sources.md)（SKILL.md 正文不再带脚注），仓库根新增 `AGENTS.md` 维护者入口。
 - **验证结果**：
   - `python tests/run_checks.py` 四项全绿；CI 已上线。
   - 全仓 Markdown 相对链接 0 失效；SKILL.md 全部 ≤ 8000 字节。

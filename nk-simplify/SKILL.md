@@ -57,14 +57,3 @@ description: Simplify settled, recently changed code for clarity, reuse, quality
 * 汇报：哪些原本就良好、哪些得到改善，按复用/质量/效率分类报告应用数与跳过数；没有任何改动就如实说明。不以净删行数作为成功指标。
 * 若精简过程中发现值得沉淀的经验（非显而易见的取舍、易踩的坑），一句话建议运行 `/nk-compound`。
 * 精简完成即达到版本审查前置状态，一句话建议接着运行 `nk-review`。
-
----
-
-> 主要参考：CE `ce-simplify-code` (2026-09)、NexusKit 共享约定 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md)
->
-> 与 CE 的主要差异及原因：
-> * 删除 CE 的平台编排细节（受限派发、代理生命周期、模型档位、权限模式参数、任务跟踪提示、阻塞提问工具的探测规则）：NexusKit 客户端中立，只保留“支持子代理则派发、否则内联”的一条规则。
-> * 三视角从“固定并行三个”改为“按信号选用、默认全跑”：NexusKit 以单会话串行为主，小范围改动不必机械跑满三个视角。
-> * 删除 `session-settled:` 结构钉与计划路径传参机制：NexusKit 的等价物是 `conventions/settled-decisions.md`，直接引用共享约定。
-> * 验证与提交并入 NexusKit 提交节奏（R1 验证证据入提交说明），CE 原文只要求跑检查、不管提交。
-> * 增加与 `nk-compound`、`nk-review` 的衔接一句话：精简在体系内的位置是实现之后、版本审查之前。

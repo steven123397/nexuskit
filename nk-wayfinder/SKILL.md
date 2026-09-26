@@ -69,17 +69,3 @@ HITL 对话按 [`../conventions/decision-autonomy.md`](../conventions/decision-a
 
 - ticket 解决中沉淀出非显而易见的经验或决策理由 → [`../nk-compound/SKILL.md`](../nk-compound/SKILL.md)。
 - 会话结束 → [`../nk-handoff/SKILL.md`](../nk-handoff/SKILL.md) 登记现场；无人值守时的 `[待确认]` 项登记在 `docs/current.md`（见 decision-autonomy 约定第三章）。HITL ticket 在无人值守下不可 resolve，登记后跳过。
-
----
-
-> 主要参考：Matt `wayfinder`（2026-08 本地备份，128 行全文）。
->
-> 与 Matt 版的主要差异及原因：
-> * Tracker 固定为 GitHub Issues（`gh` CLI），label 缺失时用 `gh label create` 创建；删除 tracker 配置探测与安装引导步骤：体系不需要多 tracker 抽象。
-> * 无远端时明确不可用并建议改用 `nk-plan`/`nk-brainstorm`：wayfinder 的价值在 tracker 的查询与可视化，不发明本地降级格式。
-> * `/grilling` → 按 `decision-autonomy.md` 提问规则进行 HITL 对话：体系有意移除了 grill 技能。
-> * `/domain-modeling` → 术语即时写入 `CONCEPTS.md`，规则在 `concepts-vocabulary.md`。
-> * `/research` subagent → 中性写法：支持子代理则派发，否则主会话内联完成；去掉一次性 research branch 约定（客户端无关性，findings 直接从 ticket 链接）。
-> * `/prototype` → 一句话内联：构建廉价粗糙的具体产物辅助讨论，不依赖技能。
-> * 删除 `agents/openai.yaml`：客户端专有配置。
-> * 新增与 `nk-compound`、`nk-handoff`、`nk-plan`/`nk-work` 的衔接说明，以及无人值守下 HITL ticket 的登记规则。

@@ -52,16 +52,3 @@ argument-hint: "[需求描述、需求阶段 plan 路径、要深化的 plan 路
 * **plan 不记执行进度**：没有 `status` 字段，不加复选框；进度以带 U-ID 的提交为准。
 * **不重问已定决策**；已定标注也不压制缺陷证据。
 * **提交**：`nk-plan` 本身不提交。会话在规划后结束时，由 `nk-handoff` 把规划产出和 `docs/current.md` 合成一次交接提交；同一会话接着用 `nk-work` 实施时，规划产出随第一个单元的提交一起入库（[`../conventions/commit-cadence.md`](../conventions/commit-cadence.md) R4）。
-
----
-
-> 主要参考：CE `ce-plan`（2026-09，含 `references/agents/` 研究员与深化视角）、CE `ce-doc-review` 的审阅视角（并入写后自检）、Matt `codebase-design`（Design It Twice、依赖分类）。
->
-> 与 CE 的主要差异及原因：
-> * 只输出 Markdown：`nk-work` 按标题定位 plan 章节，单一格式最稳；HTML 渲染规则和预览脚本不再需要。
-> * 不调用 `ce-doc-review`，改为写后自检：保留其连贯性、可行性、范围、安全、设计、产品、对抗性视角的检查要点，由主会话执行，避免依赖一个单独的审阅技能和强制多代理审查。
-> * 去掉模型提权、跨模型调度脚本、Compound Packs、Slack 调研、`docs_root` 等 CE 配置层与流水线模式：这些依赖 CE 专有的基础设施或编排方，本体系不使用。研究员与深化视角的子代理规模保持 CE 原样。
-> * Bake-off 改为设计对比（取自 Matt 的 Design It Twice）：不依赖单独的竞赛技能，同样用于后果重大、难以推翻的"怎么做"。
-> * 提问从"每轮一个问题"改为批量提问：按 `decision-autonomy.md` 减少一问一答的往返。
-> * 规划中即时写入术语，而不是只在术语表已存在时补漏：让规划期诞生的术语不流失。
-> * 收尾菜单改为 NexusKit 流程：推荐结束会话交接、新会话用 `nk-work` 接手，规划产出与交接合成一次提交；去掉 `/goal`、原型和浏览器打开选项。

@@ -47,15 +47,3 @@ description: Explore a vague or ambitious idea into a right-sized requirements-o
 * **不提交。** 同一会话继续规划或实施时，产出留在工作区随下一个提交入库；会话在此结束时，由 `../nk-handoff/SKILL.md` 把 plan、`CONCEPTS.md`、`current.md` 合为一次提交（见 `../conventions/commit-cadence.md` R4）。
 
 子代理（grounding 侦察、声明核实）按任务形态分档，不写死模型名；支持子代理时派发，否则在主会话内联完成，读取预算与产出上限不变。
-
----
-
-> 主要参考：CE `ce-brainstorm` (2026-09)、Matt `domain-modeling`（术语即时质疑、用具体场景压力测试概念边界）、Matt `to-spec`（上下文已充分时不访谈、直接综合）。
->
-> 与 CE 的主要差异及原因：
-> * 术语在对话中敲定即写入 `CONCEPTS.md`，文件不存在时新建：CE 只在写完 plan 后、且文件已存在时才补录，规划期敲定的术语因此流失。
-> * 互不依赖的问题合并为一轮提问（最多 3 个）：CE 规定每轮一问，交互轮数过多；合并规则见 `../conventions/decision-autonomy.md`。
-> * 只输出 Markdown；可视化探针改为对话内的 mermaid/文字草图，不启动本地网页服务。
-> * 去掉跨模型提权、Compound Packs、Slack 调研、Bake-off、CE 配置层与 `lfg`/pipeline 调用模式：本体系不使用这些基础设施。
-> * 指向 `ce-pov`、`ce-prototype`、`ce-doc-review`、`ce-proof` 等技能的分流改为内联原则或交接选项：NexusKit 没有这些技能。
-> * 不提交，会话结束的提交交给 `nk-handoff`：与提交节奏规则一致。

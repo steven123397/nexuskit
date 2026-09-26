@@ -64,16 +64,3 @@ argument-hint: "[主题、关注点或约束，可选；可带 'go deep'、'quic
 * **先讨论或调整这些想法**：留在本技能内。
 * **结束会话**：读取 [`../nk-handoff/SKILL.md`](../nk-handoff/SKILL.md)，发想记录随交接提交一起入库（见 [`../conventions/commit-cadence.md`](../conventions/commit-cadence.md) R4）。
 * **完成**：保留文件并停止。
-
----
-
-> 主要参考：CE `ce-ideate` (2026-09)、NexusKit 共享约定 [`../conventions/`](../conventions/)
->
-> 与 CE 的主要差异及原因：
-> * 只输出 Markdown，去掉 HTML 渲染、浏览器打开与 Proof 发布：用户选择统一使用 Markdown，发想记录由人和 Agent 都直接读文件。
-> * 去掉 `.compound-engineering` 配置层与 `docs_root`：NexusKit 不使用 CE 配置文件，产物位置固定在 `docs/ideation/`。
-> * 去掉 Slack 调研：用户不使用 Slack 作为信息来源。
-> * 临时目录改为不依赖 bash 的中立描述：技能需要在 PowerShell 等多种 shell 与客户端中运行。
-> * 提问改为批量规则（每轮最多 3 个）：遵循 NexusKit 的决策自主约定；"累计超过 3 个问题说明选错流程"的原则保留。
-> * 下一步改为 `nk-brainstorm` / `nk-handoff`，提交遵循 NexusKit 提交节奏：发想记录不单独提交。
-> * 子代理编队规模、六视角、依据核查、tactical 与 `go deep` 变体保持 CE 原样：用户选择质量优先。

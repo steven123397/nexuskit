@@ -18,7 +18,7 @@ description: Execute one implementation unit from a plan, an Issue, or a clear r
 
 ### 0. 定位与环境核对 (Orient)
 1. **读取状态与指引**：读取目标仓库的 `docs/current.md`（若存在）获取当前能力、验证结果、阻断项与下一步；从 `AGENTS.md` 索引项目工作流文档（如 `docs/release-workflow.md`），必要时查阅 `CONCEPTS.md` 与 `docs/solutions/` 相关背景。
-2. **核对现场与分支**：核对当前所在分支；运行 `git status --short --untracked-files=all` 记录现场。
+2. **核对现场与分支**：核对当前所在分支；运行 `git status --short --untracked-files=all` 记录现场；用 `git rev-parse --short HEAD` 与 `current.md` 记录的 HEAD 比对——不一致时不阻断，向用户报告"检测到 N 个未记录的中间提交"（`git rev-list --count <旧哈希>..HEAD`）再继续。
 3. **脏文件分类**：
    * `current.md` 中“工作区未提交改动”登记的文件视为上一个会话交接的半成品，由本会话接管；
    * 其余未跟踪或未提交的改动视为外来脏文件，本次工作不暂存或提交；若本单元必须修改这些文件，在第一次提交前向用户统一确认一次。
@@ -62,16 +62,3 @@ description: Execute one implementation unit from a plan, an Issue, or a clear r
 ## 子代理支持 (Subagents，可选)
 * **适用场景**：独立调查、并行阅读文档、或在全新干净上下文中实现具体算法单元。
 * **纪律**：子代理不执行 `git commit`；将改动文件与验证证据回传至主对话，由主对话核对实际工作区后统一提交（详见 [`references/subagents.md`](references/subagents.md)）。
-
----
-
-> 主要参考：CE `ce-work` (2026-09)、Matt `tdd` / `implement`、NexusKit 共享约定
->
-> 与 CE 的主要差异及原因：
-> * 未移植调度脚本、跨模型执行与默认并行波次：本体系是一个会话串行推进、主对话提交，不需要这层编排。
-> * 进度以带 U-ID 的提交为准，不为记进度修改 plan：plan 的每次改动都应是有意义的范围或决策变化。
-> * 一个会话默认一个单元、可顺延：避免小单元被迫逐个交接、产生多余的交接提交。
-> * 接手时"一致则继续，不一致才停"：`current.md` 是本仓库的单例文件，不像 CE 的交接文档那样来源不可信。
-> * 脏文件分两类：`current.md` 登记的半成品由本会话接管，其余一律不暂存。
-> * 不设代码审查关卡：审查发生在版本层面，由 `nk-review` 负责。
-> * 测试 seam 由 Agent 自选（改写 Matt `tdd` 的"先与用户确认"）：测试结构属于自主决断区。

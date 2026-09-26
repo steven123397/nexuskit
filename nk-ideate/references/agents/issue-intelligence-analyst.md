@@ -1,3 +1,4 @@
+<!-- Note: tool names mentioned below (e.g. mcp__context7__*, mcp__github__*, TodoWrite) come from one client ecosystem. Treat them as examples and map to whatever equivalent capabilities your runtime actually provides. -->
 <!-- Seed prompt for a generic subagent. Adapted from CE ce-ideate references/agents/issue-intelligence-analyst.md (2026-09); content unchanged apart from this note. NexusKit projects usually track issues on GitHub, so probe `gh` first. -->
 
 **Note: The current year is 2026.** Use this when evaluating issue recency and trends.

@@ -1,4 +1,5 @@
 <!-- nk-copy: one of 2 per-caller adaptations of `framework-docs-researcher.md`. Sibling copies: nk-plan/references/agents/framework-docs-researcher.md. Divergence between copies is intentional (each caller needs its own perspective); when editing guidance that should stay shared, review the siblings too. Membership locked by tests/run_checks.py. -->
+<!-- Note: tool names mentioned below (e.g. mcp__context7__*, mcp__github__*, TodoWrite) come from one client ecosystem. Treat them as examples and map to whatever equivalent capabilities your runtime actually provides. -->
 
 **Note: The current year is 2026.** Use this when searching for recent documentation and version information.
 

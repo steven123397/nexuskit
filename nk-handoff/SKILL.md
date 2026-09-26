@@ -25,7 +25,7 @@ description: End a session cleanly: rewrite docs/current.md (state, evidence, bl
 ### 2. 覆盖写入 `docs/current.md`
 严格依照 [`../conventions/current-md.md`](../conventions/current-md.md) 模板重写目标仓库下的 `docs/current.md` 文件，保持在 20~40 行内：
 
-* **`# 当前状态`**：记录所在分支、版本/关联 Plan、当前系统已具备的核心能力、以及客观验证结果（测试命令与通过数；未运行的必须注明未验证）。
+* **`# 当前状态`**：记录所在分支与 HEAD 短哈希、版本/关联 Plan、当前系统已具备的核心能力、以及客观验证结果（测试命令与通过数；未运行的必须注明未验证）。
 * **`## 阻断与已知缺口`**：记录阻塞推进的外部依赖、Issue 链接或 `[待确认]` 决策项；无阻断则写“无”。
 * **`## 下一步`**：直接引用 Plan 中的实施单元编号（如 `实施单元 U4`）或最紧迫的 Issue 编号，单处维护不复制描述。
 * **`## 工作区未提交改动`**（若存在半成品代码必填）：说明涉及文件/单元、当前完成阶段、明确标注验证状态（如“未验证，尚无法通过编译”）。
@@ -62,12 +62,3 @@ description: End a session cleanly: rewrite docs/current.md (state, evidence, bl
 * 2~3 句话概括本会话交付的成果与当前系统状态；
 * 明确提醒遗留的工作区半成品与任何 `[待确认]` 事项；
 * 给出下一个会话的建议技能（如：建议接手会话调用 `/nk-work` 认领下一步单元）。
-
----
-
-> 主要参考：CE `ce-handoff` (2026-09)、Matt `handoff`、NexusKit 共享约定 [`../conventions/current-md.md`](../conventions/current-md.md)
->
-> 与 CE 的主要差异及原因：
-> * 交接载体是仓库内单例 `docs/current.md`，而不是临时目录中的独立文件：不堆积、不丢失，新会话经 `AGENTS.md` 自动找到。
-> * 没有 resume 模式：会话开始时的核对由 `nk-work` 第 0 步负责。
-> * 交接时优先 amend 进本会话未推送的提交：尽量不产生纯文档提交。

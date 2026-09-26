@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """NexusKit mechanical checks. Run from repo root: python tests/run_checks.py
 
-Four checks, each maps to a class of failure that actually happened:
+Five checks, each maps to a class of failure that actually happened:
 1. link-integrity   - relative markdown links must resolve
 2. references       - nk-* mentions resolve to real skills; no dangling K/R code refs
 3. byte-budget      - SKILL.md <= 8000 bytes (Codex injection limit), ratchet list
 4. prompt-copies    - duplicated subagent prompts match tests/prompt-copies.txt and
                       carry the nk-copy declaration header
+5. frontmatter      - SKILL.md frontmatter parses under strict YAML, has name and
+                      description, and name matches its directory (installers such
+                      as the skills CLI derive the install dir from frontmatter name)
 """
 import glob
 import os
@@ -138,11 +141,47 @@ def check_prompt_copies():
     check("prompt-copies", problems)
 
 
+# --- 5. frontmatter ---
+def check_frontmatter():
+    problems = []
+    for f in sorted(glob.glob("skills/*/SKILL.md")):
+        f = f.replace(os.sep, "/")
+        text = open(f, encoding="utf-8").read()
+        if not text.startswith("---\n"):
+            problems.append(f"{f}: missing frontmatter")
+            continue
+        end = text.find("\n---", 4)
+        if end == -1:
+            problems.append(f"{f}: unterminated frontmatter")
+            continue
+        name = desc = None
+        for line in text[4:end].splitlines():
+            m = re.match(r"^(\w[\w-]*):\s*(.*)$", line)
+            if not m:
+                continue
+            key, val = m.group(1), m.group(2)
+            if val and not val.startswith(('"', "'")) and ": " in val:
+                problems.append(f"{f}: plain scalar containing ': ' breaks strict YAML parsers; quote the value")
+            if key == "name":
+                name = val.strip("\"'")
+            elif key == "description":
+                desc = val
+        dirname = f.split("/")[1]
+        if not name:
+            problems.append(f"{f}: frontmatter missing name")
+        elif name != dirname:
+            problems.append(f"{f}: name '{name}' != directory '{dirname}' (installers derive install dir from frontmatter name)")
+        if not desc:
+            problems.append(f"{f}: frontmatter missing description")
+    check("frontmatter", problems)
+
+
 if __name__ == "__main__":
     check_links()
     check_references()
     check_byte_budget()
     check_prompt_copies()
+    check_frontmatter()
     if failures:
         print(f"\n{sum(len(p) for _, p in failures)} problem(s) in {len(failures)} check(s)")
         sys.exit(1)

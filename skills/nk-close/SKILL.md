@@ -1,6 +1,6 @@
 ---
 name: nk-close
-description: Close a delivered version before merge or release (close version, pre-merge cleanup, harvest and delete plans): transfer leftovers, harvest decisions and terms, delete delivered artifacts, rewrite docs/current.md, and make the single R4 close commit. 版本收尾、发布前清理、close version、合并前收尾、提炼删除 plan。
+description: "Close a delivered version before merge or release (close version, pre-merge cleanup, harvest and delete plans): transfer leftovers, harvest decisions and terms, delete delivered artifacts, rewrite docs/current.md, and make the single R4 close commit. 版本收尾、发布前清理、close version、合并前收尾、提炼删除 plan。"
 disable-model-invocation: true
 ---
 

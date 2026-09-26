@@ -12,6 +12,6 @@
 
 ## 改动规则
 
-- 修改任何 `skills/nk-*/` 或 `skills/conventions/` 后，运行 `python tests/run_checks.py`，四项检查（链接、引用、字节上限、提示词副本清单）必须全绿；CI 会在推送时复跑。
+- 修改任何 `skills/nk-*/` 或 `skills/conventions/` 后，运行 `python tests/run_checks.py`，五项检查（链接、引用、字节上限、提示词副本清单、frontmatter 严格 YAML 与 name/目录同名）必须全绿；CI 会在推送时复跑。
 - 提交节奏遵循 [`conventions/commit-cadence.md`](skills/conventions/commit-cadence.md)：一个经过验证的变化一次提交，纯状态改动不单独提交。
 - `docs/skill-sources.md` 随技能的新建/修改同步更新；技能的 `SKILL.md` 正文不写来源备注。

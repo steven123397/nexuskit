@@ -1,6 +1,6 @@
 ---
 name: nk-commit
-description: Create commits that follow NexusKit commit cadence (R1–R6): one verified change per commit, docs ride with code, docs-only commits only at session handoff or version close. 按提交节奏规则提交代码；提交、commit、amend。
+description: "Create commits that follow NexusKit commit cadence (R1–R6): one verified change per commit, docs ride with code, docs-only commits only at session handoff or version close. 按提交节奏规则提交代码；提交、commit、amend。"
 ---
 
 # /nk-commit

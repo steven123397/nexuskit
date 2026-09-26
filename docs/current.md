@@ -10,14 +10,15 @@
   - 质量链：`nk-debug`、`nk-simplify`、`nk-review`。
   - 其余：`nk-wayfinder`（决策地图，GitHub Issues 承载）、`nk-to-issue`（核实分析后落档）、`nk-wizard`（手动操作引导脚本）、`nk-wait-what`（重新对齐）。
   - 设计变更：`nk-to-tasks` 取消（长期挂起由 nk-close 覆盖，并行认领按 YAGNI 不建）——用户 2026-09-26 拍板。
+  - 工程保障：`tests/run_checks.py` 四项机械检查（链接完整性 / K-R 引用解析 / SKILL.md 8000 字节上限带 ratchet / 重复提示词清单锁定）+ GitHub Actions CI（ubuntu + windows）。
 - **验证结果**：
-  - 全仓 131 个 Markdown 文件相对链接检查：0 失效（wayfinder 模板占位符除外）。
-  - `nk-to-tasks` 引用清零（nk-plan handoff 菜单已同步）。
+  - `python tests/run_checks.py` 四项全绿；CI 已上线。
+  - 全仓 Markdown 相对链接 0 失效；SKILL.md 全部 ≤ 8000 字节。
   - 未验证：真实项目中的端到端使用——下一阶段正是这件事。
 
 ## 阻断与已知缺口
 
-- `learnings-researcher`、`web-researcher` 提示词在 nk-ideate、nk-plan、nk-review 各有一份，打包阶段决定是否共享。
+- `learnings-researcher` 等 10 组重复提示词已加分叉声明并锁定集合成员（tests/prompt-copies.txt）；是否合并共享留待打包阶段决定。
 - 无其他阻断项。
 
 ## 下一步

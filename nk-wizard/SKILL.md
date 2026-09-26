@@ -1,6 +1,7 @@
 ---
 name: nk-wizard
 description: Generate an interactive bash wizard that walks a human through manual-only procedures — setup, provisioning infrastructure, configuring credentials or CI secrets, one-time migrations or cutovers, guiding manual operations. Not for steps the agent can execute itself. 生成引导脚本、交互式向导、配置 secrets、provisioning、一次性迁移、引导手动操作。
+disable-model-invocation: true
 ---
 
 # /nk-wizard

@@ -63,9 +63,10 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 | D5 | **Issue 负责跨 plan 的事务** | 待办、疑难缺陷、推迟的工作、wayfinder 探针。plan 内部的实施单元不拆 Issue，靠 plan + `current.md` 接力。不设 plan→Issue 的转换技能（长期挂起由 `nk-close` 覆盖，并行认领按 YAGNI 不建）；Issue 格式由 `conventions/issue-writing.md` 统一约定，开发中冒出的 bug/需求由 `nk-to-issue` 核实分析后落档。 |
 | D6 | **去掉 grill；术语即时写入** | 以 CE 的 ideate/brainstorm 为主体。Agent 对可逆、局部、有惯例可循的事自行决定并注明理由；只对范围变化、不可逆、数据/API 契约类分歧询问人。术语写入时机取 Matt（brainstorm/plan 中敲定即写），格式规则取 CE（`concepts-vocabulary.md`）。 |
 | D7 | **ADR 并入 `solutions/`** | 取消 `docs/adr/`，"决策"作为 solution 的一种类型。入选门槛沿用 Matt 三条：难以撤回、无背景会困惑、确有取舍。D4 删除 plan 后，决策理由需要去处，这正是收尾时提炼的主要内容。 |
-| D8 | **自主体系，审慎派生** | 以 CE/Matt 原文为起点改写，按自己的画像取舍；每个技能记录一行来源备注，不维护同步机制。删减原则见第七章。 |
+| D8 | **自主体系，审慎派生** | 以 CE/Matt 原文为起点改写，按自己的画像取舍；来源与取舍集中记录于 `docs/skill-sources.md`，不维护同步机制。删减原则见第七章。 |
 | D9 | **提交节奏规则** | 见第五章。 |
 | D10 | **任务粒度按实现内容切** | 200k~300k Token 是设计理念（单会话能舒适完成），不是硬约束，不写进任何可执行规则。设计动机：让 Agent 始终处于 context window 的最佳推理区间（<100k tokens，理想 <30k——Matt 的 Smart Zone 原则）。 |
+| D11 | **不为子代理建编排层** | 各客户端的子代理机制差异大（Claude Code / Codex / Cursor / zcode / deepseek-harness / Kimi Code），用脚本或返回契约约束子代理的维护成本过高；子代理只作可选工具，纪律用 Markdown 约定表达。也据此不设 return-to-caller 式的结构化返回（没有编排层消费）。 |
 
 ---
 

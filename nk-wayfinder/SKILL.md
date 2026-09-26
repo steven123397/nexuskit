@@ -2,6 +2,7 @@
 name: nk-wayfinder
 description: Chart an oversized, foggy goal into a shared decision map on the issue tracker, then resolve decision tickets one per session until the path to the destination is clear. Use when a goal is too big and too unknown for a single plan or session, when the path forward cannot be seen, for decision maps and wayfinding. 超大模糊目标、看不清路径、决策地图、decision ticket、wayfinding。
 argument-hint: "[可选：map issue URL 或编号；留空则带着新想法 chart]"
+disable-model-invocation: true
 ---
 
 # /nk-wayfinder

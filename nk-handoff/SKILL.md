@@ -1,6 +1,7 @@
 ---
 name: nk-handoff
 description: End a session cleanly: rewrite docs/current.md (state, evidence, blockers, next unit, uncommitted work) and commit it per cadence rules so any agent can resume. 会话交接、结束会话、更新 current.md。
+disable-model-invocation: true
 ---
 
 # /nk-handoff

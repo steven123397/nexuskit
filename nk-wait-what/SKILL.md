@@ -1,6 +1,7 @@
 ---
 name: nk-wait-what
 description: Pause and re-sync when the conversation has drifted or a message was unclear — ask the user to restate with background, in plain simple words, using the project glossary. 停一下、等等、没跟上、重新说一遍、wait what。
+disable-model-invocation: true
 ---
 
 # /nk-wait-what

@@ -54,11 +54,11 @@
 | 沉淀一条经验或决策 | `/nk-compound` |
 | 版本收尾 | `/nk-close` |
 | 目标巨大、未知太多，无法直接写 plan | `/nk-wayfinder` |
-| plan 需要并行或长期挂起，拆成 Issue | `/nk-to-tasks` |
+| 开发中冒出 bug 或新需求，先记下来不打断当前任务 | `/nk-to-issue` |
 | 引导人完成一系列手动操作 | `/nk-wizard` |
 | Agent 发散了，需要重新梳理 | `/nk-wait-what` |
 
-实施进度见 RFC 第八章；尚未实现的技能暂用 CE 原版。
+实施进度见 RFC 第八章；全部技能已就位，接下来是 paper-30min 的迁移与集中验收。
 
 ---
 

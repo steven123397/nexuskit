@@ -12,7 +12,7 @@
 | **Plan (方案与计划)** | 开发分支 `docs/plans/*.md`（格式见 [`plan-format.md`](plan-format.md)） | 短期 / 阶段性 | `/nk-brainstorm` 创建需求部分，`/nk-plan` 补全实施部分，实施过程中根据新发现直接就地修改 | 收尾时提炼架构决策/术语后删除；不留未维护的历史死 Plan，完整过程由 Git 留存 |
 | **Review (审查记录)** | 开发分支 `docs/reviews/*.md` | 短期 / 阶段性 | `/nk-review` 创建并追加审查条目 | 修复随代码提交更新；收尾时遗留项转 Issue，文件删除 |
 | **Current (会话入口)** | `docs/current.md` | 常驻（单例覆盖） | `/nk-handoff`、`/nk-close` 更新 | 持续覆盖更新，始终反映当前真实状态 |
-| **Issue / 待办 / 探针** | GitHub Issues（无远端时降级为 `docs/backlog.md`） | 中期（任务生命周期） | `/nk-wayfinder`（探针）、跨 plan 疑难 bug、推迟项 | 完成后关闭（Closed），依靠 Issue 平台状态流转与归档 |
+| **Issue / 待办 / 探针** | GitHub Issues（无远端时降级为 `docs/backlog.md`） | 中期（任务生命周期） | `/nk-to-issue`（核实落档）、`/nk-wayfinder`（探针）、跨 plan 疑难 bug、推迟项 | 完成后关闭（Closed），依靠 Issue 平台状态流转与归档 |
 | **Solutions (经验与决策)** | `docs/solutions/<category>/*.md` | 长期 / 永久资产 | `/nk-compound` 沉淀，或收尾时从 plan 提炼 | 永久沉淀；由 refresh 定期审计是否过时或漂移 |
 | **Concepts (领域术语)** | 根目录 `CONCEPTS.md` | 长期 / 永久资产 | `/nk-brainstorm` / `/nk-plan` 即时录入，`nk-compound` 补全 | 永久沉淀；由 refresh 定期审计 |
 | **项目特有流程** | 项目自选工作流文档（由 `AGENTS.md` 索引） | 长期 | 项目自身维护 | 外部技能读取遵循、不内置、不侵入 |

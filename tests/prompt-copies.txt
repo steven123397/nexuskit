@@ -1,0 +1,12 @@
+# Duplicated subagent prompt groups. Each line: <filename>: <copy paths>
+# run_checks.py fails if the on-disk set differs from this manifest, or a copy lacks the nk-copy header.
+best-practices-researcher.md: nk-compound/references/agents/best-practices-researcher.md, nk-plan/references/agents/best-practices-researcher.md
+data-integrity-guardian.md: nk-compound/references/agents/data-integrity-guardian.md, nk-plan/references/agents/data-integrity-guardian.md
+data-migration-reviewer.md: nk-plan/references/agents/data-migration-reviewer.md, nk-review/references/personas/data-migration-reviewer.md
+deployment-verification-agent.md: nk-plan/references/agents/deployment-verification-agent.md, nk-review/references/personas/deployment-verification-agent.md
+framework-docs-researcher.md: nk-compound/references/agents/framework-docs-researcher.md, nk-plan/references/agents/framework-docs-researcher.md
+learnings-researcher.md: nk-ideate/references/agents/learnings-researcher.md, nk-plan/references/agents/learnings-researcher.md, nk-review/references/personas/learnings-researcher.md
+pattern-recognition-specialist.md: nk-compound/references/agents/pattern-recognition-specialist.md, nk-plan/references/agents/pattern-recognition-specialist.md
+performance-oracle.md: nk-compound/references/agents/performance-oracle.md, nk-plan/references/agents/performance-oracle.md
+security-sentinel.md: nk-compound/references/agents/security-sentinel.md, nk-plan/references/agents/security-sentinel.md
+web-researcher.md: nk-ideate/references/agents/web-researcher.md, nk-plan/references/agents/web-researcher.md

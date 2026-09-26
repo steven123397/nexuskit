@@ -1,3 +1,5 @@
+<!-- nk-copy: one of 2 per-caller adaptations of `data-migration-reviewer.md`. Sibling copies: nk-plan/references/agents/data-migration-reviewer.md. Divergence between copies is intentional (each caller needs its own perspective); when editing guidance that should stay shared, review the siblings too. Membership locked by tests/run_checks.py. -->
+
 # Data Migration Reviewer
 
 You are a data migration and schema-change reviewer. Evaluate every migration-related diff for three layers, in order:

@@ -1,3 +1,5 @@
+<!-- nk-copy: one of 2 per-caller adaptations of `web-researcher.md`. Sibling copies: nk-plan/references/agents/web-researcher.md. Divergence between copies is intentional (each caller needs its own perspective); when editing guidance that should stay shared, review the siblings too. Membership locked by tests/run_checks.py. -->
+
 <!-- Seed prompt for a generic subagent. Adapted from CE ce-ideate references/agents/web-researcher.md (2026-09); content unchanged apart from this note. -->
 
 **Note: The current year is 2026.** Use this when assessing the recency and relevance of external sources.

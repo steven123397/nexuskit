@@ -10,10 +10,10 @@
 
 ## 背景
 
-两套体系都在实战项目 [`D:\codex_project\paper-30min`](file:///D:/codex_project/paper-30min) 中完整运行过：
+两套体系都在实战项目（paper-30min，私有仓库）中完整运行过：
 
-* **Matt Pocock Skills**（本地备份：[`C:/Users/29617\.agents\backups\mattpocock-skills-20260824-193425`](file:///C:/Users/29617/.agents/backups/mattpocock-skills-20260824-193425)）
-* **Compound Engineering**（本地安装：[`C:/Users/29617\.gemini\config\plugins\compound-engineering`](file:///C:/Users/29617/.gemini/config/plugins/compound-engineering)）
+* **Matt Pocock Skills**（[mattpocock/skills](https://github.com/mattpocock/skills)，2026-08 本地备份）
+* **Compound Engineering**（[EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin)，v3.28.2）
 
 | 维度 | Matt | CE | NexusKit |
 | :-- | :-- | :-- | :-- |
@@ -66,10 +66,30 @@
 
 ## 安装
 
-本目录是开发目录。体系定型后将仿照 CE 打包为多 Agent 插件。
+仓库布局：技能与共享约定都在 [`skills/`](skills/) 下（`skills/nk-*` + `skills/conventions/`；`conventions` 是共享约定参考库，不是可执行技能，但必须以同名目录与 `nk-*` 平级安装，技能正文里的 `../conventions/` 引用才能解析）。
+
+### Kimi Code 插件
+
+```
+/plugins install https://github.com/steven123397/nexuskit-skills
+```
+
+清单为根目录 `kimi.plugin.json`（`skills: "./skills/"`，整树随插件分发）。安装后 `/reload` 或开新会话生效。
+
+### Codex 插件
+
+清单为 [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json)（`skills: "./skills/"`），按 Codex 的插件安装方式指向本仓库即可。
+
+### npx（skills CLI）
+
+```
+npx skills add steven123397/nexuskit-skills
+```
+
+逐技能安装到 `.agents/skills/` 并平铺。注意：**务必连同 `conventions` 一起安装**（交互多选时全选，或 `--all`）——它是各技能 `../conventions/` 引用的共享约定库。也支持 `-s nk-plan` 单选技能。
 
 ---
 
 ## 许可证
 
-[MIT](LICENSE)
+[MIT](LICENSE)。本体系部分技能派生自 mattpocock/skills 与 EveryInc/compound-engineering-plugin（均 MIT），归属声明见 [NOTICE](NOTICE)。

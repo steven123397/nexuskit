@@ -1,0 +1,33 @@
+{
+  "name": "nexuskit",
+  "version": "0.1.0",
+  "description": "面向 AI 编程 Agent 的个人工程技能体系：规划、实施、排错、审查、知识沉淀的 17 个 nk-* 技能与共享约定",
+  "author": {
+    "name": "steven123397"
+  },
+  "homepage": "https://github.com/steven123397/nexuskit-skills",
+  "repository": "https://github.com/steven123397/nexuskit-skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "planning",
+    "code-review",
+    "debugging",
+    "knowledge-management",
+    "workflows"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "NexusKit",
+    "shortDescription": "Personal engineering skill system: plan, work, debug, review, compound",
+    "longDescription": "NexusKit is a toolbox of 17 nk-* skills for AI coding agents: ideate, brainstorm, plan, work, commit, handoff, debug, review, simplify, compound, close, plus shared conventions on commit cadence, artifact lifecycle, and vocabulary.",
+    "developerName": "steven123397",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/steven123397/nexuskit-skills"
+  }
+}

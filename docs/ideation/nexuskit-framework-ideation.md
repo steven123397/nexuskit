@@ -11,11 +11,11 @@ v2.0 相对 v1.0 的主要变化：从"固定流水线"改为"按场景取用的
 
 ## 一、背景
 
-实战验证基地：[`D:\codex_project\paper-30min`](file:///D:/codex_project/paper-30min)（先后完整运行过 Matt 体系与 CE 体系）。
+实战验证基地：paper-30min（私有仓库，先后完整运行过 Matt 体系与 CE 体系）。
 
 参考源：
-* **Matt Pocock Skills**：[`C:/Users/29617\.agents\backups\mattpocock-skills-20260824-193425`](file:///C:/Users/29617/.agents/backups/mattpocock-skills-20260824-193425)
-* **Compound Engineering (CE)**：[`C:/Users/29617\.gemini\config\plugins\compound-engineering`](file:///C:/Users/29617/.gemini/config/plugins/compound-engineering)
+* **Matt Pocock Skills**：[mattpocock/skills](https://github.com/mattpocock/skills)（2026-08 本地备份）
+* **Compound Engineering (CE)**：[EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin)（本地安装）
 
 NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用多种 Agent（Claude Code / Codex / Antigravity 等）、不强制走 PR、中文协作。两套参考源是素材库，不是需要保持同步的上游。
 

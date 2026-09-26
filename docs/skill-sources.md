@@ -146,9 +146,30 @@
 * 删除 `agents/openai.yaml`：客户端专用配置，NexusKit 客户端中立。
 * 新增两处衔接：Windows 下用 Git Bash 运行的说明；入库例外明确指向 commit-cadence R1，并提示用 `nk-compound` 沉淀过程中发现的非显性知识。
 
+## nk-init
+
+主要参考：Matt `setup-matt-pocock-skills`（2026-08 备份；仅借鉴骨架）
+
+关键设计决定：
+* 保留"探测 → 展示确认 → 幂等写入"的三段 explore-first 骨架与"探测已确定答案的不提问"；不移植 Matt 专有的 issue tracker 选择、triage label 词汇表、CONTEXT.md/ADR 布局等配置面——那些是 Matt 体系的配置，与 NexusKit 产物矩阵无关。
+* 写入对象是 NexusKit 自有产物：全局指令文件的知识入口指引（artifact-lifecycle 第二章）、`docs/current.md`、无远端时的 `docs/backlog.md` 降级。
+* 负向清单写进流程：不建 `CONCEPTS.md`（由第一个合格词条创建）、不建空目录（git 不跟踪空目录）。
+* 带 `disable-model-invocation: true`（手动技能）；提交遵循 commit-cadence。
+
+## ask-ljq
+
+主要参考：Matt `ask-matt`（2026-08 备份）
+
+关键设计决定：
+* 故意不带 `nk-` 前缀——作者（ljq）的个人元素，用户拍板，v1.0.0 前不设限。
+* Matt 的"main flow + on-ramps"单主线结构改为"工具箱宣言 → 参考路径 → 按场景入口"：落实 D1（工具箱不是流水线），路由而不规训，明说每步可单独用、可跳过、可从中间进入。
+* 保留"问我就行"的作者口吻与语境卫生建议（`docs/current.md` 接手、Smart Zone <100k/理想 <30k、单元边界交接）。
+* 新增 R1–R6 提交节奏一句话版（细节路由给 `nk-commit`）；删去 phase boundaries 决策树、prototype/triage/vocabulary layer 等 NexusKit 无对应物的内容。
+
 ## nk-work
 
 主要参考：CE `ce-work` (2026-09)、Matt `tdd` / `implement`、NexusKit 共享约定
+
 与 CE 的主要差异及原因：
 * 未移植调度脚本、跨模型执行与默认并行波次：本体系是一个会话串行推进、主对话提交，不需要这层编排。
 * 进度以带 U-ID 的提交为准，不为记进度修改 plan：plan 的每次改动都应是有意义的范围或决策变化。

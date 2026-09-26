@@ -1,7 +1,7 @@
 # 当前状态
 
 - **所在分支**：`main`
-- **版本/里程碑**：P5 已完成——全部 15 个技能就位（沿用既定模式：子代理编写、Kimi Code 评审后分技能提交；`nk-wait-what` 源文仅 6 行，由 Kimi Code 直接编写）
+- **版本/里程碑**：P6 已完成——17 个技能就位（含无前缀的 `ask-ljq`）（沿用既定模式：子代理编写、Kimi Code 评审后分技能提交；`nk-wait-what` 源文仅 6 行，由 Kimi Code 直接编写）
 - **已具备能力**：
   - 共享约定 10 份：[`conventions/`](../conventions/)（新增 `issue-writing.md`：Issue 格式四原则，吸收 Matt AGENT-BRIEF）。
   - 执行闭环：`nk-commit`、`nk-work`、`nk-handoff`。
@@ -28,7 +28,7 @@
 
 - [ ] **迁仓库**（用户将在新对话中执行）：仓库迁出 `~/.agents/skills` 加载目录（建议 `D:\codex_project
 exuskit`），GitHub 仓库改名建议 `nexuskit-skills`；加载目录只留 `nk-*/` + `conventions/` 的 junction
-- [ ] **P6**：`nk-init`（目标仓库首次启用初始化，源自 Matt setup 技能）+ 路由器技能（源自 Matt ask-matt；命名待定：nk-ask / nk-how / nk-how-to-use）
+- [x] **P6 已完成**：`nk-init`（首次启用初始化）+ `ask-ljq`（场景路由器，故意不带 nk- 前缀，作者个人元素）
 - [ ] **打包 v0.1.0**：三形态——Claude plugin、Kimi plugin（格式待查）、npx 安装器（仿 Matt skills-cli；conventions/ 随安装一起复制解决共享问题）
 - [ ] **迁移与验收**：paper-30min 从 CE 迁移到 NexusKit，首跑 nk-init；按 RFC 第八章先写迁移方案（产物处理、指令文档更新、CE 停用或并存、验收场景、迁移前打 tag 可回退）
 
@@ -42,5 +42,6 @@ exuskit`），GitHub 仓库改名建议 `nexuskit-skills`；加载目录只留 `
 | **P3** | `nk-close`、`nk-compound` | 单元验证与成稿评审通过 | **已完成** |
 | **P4** | `nk-debug`、`nk-review`、`nk-simplify` | 单元验证与成稿评审通过 | **已完成** |
 | **P5** | `nk-wayfinder`、`nk-to-issue`、`nk-wizard`、`nk-wait-what` | 单元验证与成稿评审通过 | **已完成** |
+| **P6** | `nk-init`、`ask-ljq` | 单元验证与成稿评审通过 | **已完成** |
 | **迁移与验收** | paper-30min 从 CE 迁移到 NexusKit，集中验收 | 产物整理、指令对齐、验收场景通过 | 待启动 |
 | **打包** | 仿照 CE 结构做多 Agent 插件 | 各客户端可安装 | 待启动 |

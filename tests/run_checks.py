@@ -90,7 +90,7 @@ def check_references():
 def check_byte_budget():
     problems = []
     over_now = set()
-    for f in glob.glob("nk-*/SKILL.md"):
+    for f in glob.glob("nk-*/SKILL.md") + glob.glob("ask-*/SKILL.md"):
         size = os.path.getsize(f)
         if size > BYTE_LIMIT:
             over_now.add(f)

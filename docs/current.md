@@ -15,7 +15,8 @@
   - `python tests/run_checks.py` 五项全绿；CI 已上线。
   - 布局迁移后验证：全仓 Markdown 相对链接 0 失效；`~/.agents/skills` 18 个 junction 已重指向 `skills/` 内目录，`nk-work/../conventions/` 经 junction 解析验证通过。
   - 打包验证（2026-09-26）：`npx skills@1.5.23 add` 在临时目录完整实装 18 个目录（17 技能 + conventions）零跳过，`nk-commit/../conventions/` 引用解析通过。实装中抓到并修复 4 个技能 description 未加引号导致严格 YAML 解析失败的问题（nk-close/nk-commit/nk-handoff/nk-work）。
-  - 未验证：Kimi/Codex 插件清单经 `/plugins install` 或 Codex 实际安装（格式按官方文档与 CE 样本编写）；真实项目中的端到端使用。
+  - 已验证（2026-09-26）：Kimi 插件本地路径安装（`/plugins install D:\codex_project\nexuskit`）成功，`installed.json` 记录 enabled。GitHub URL 安装的下载与解压正常（非网络问题），失败在最后一步临时目录 rename（EPERM，疑似 Defender 对带 Mark-of-the-Web 文件的瞬态锁）——属 Kimi 安装器应加重试的健壮性问题，本地路径为可靠兜底。
+  - 未验证：Codex 插件实装；真实项目中的端到端使用。
 
 ## 阻断与已知缺口
 

@@ -78,7 +78,18 @@
 
 ### Codex 插件
 
-清单为 [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json)（`skills: "./skills/"`），按 Codex 的插件安装方式指向本仓库即可。
+Codex 通过"市场"机制安装（清单在 [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json)，仓库即单插件市场）：
+
+**Codex App**：侧边栏 **Plugins** → **Create** 旁的箭头 → **Add marketplace** → Source 填 `steven123397/nexuskit-skills`、Git ref 填 `main`、Sparse paths 留空 → Add marketplace → 搜索 **NexusKit** 安装 → 重启 Codex。
+
+**Codex CLI**：
+
+```bash
+codex plugin marketplace add steven123397/nexuskit-skills
+codex plugin add nexuskit@nexuskit-skills
+```
+
+装完重启 Codex。
 
 ### npx（skills CLI）
 

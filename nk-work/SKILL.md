@@ -1,6 +1,6 @@
 ---
 name: nk-work
-description: Execute one implementation unit from a plan, an Issue, or a clear request: orient from docs/current.md, test-first implementation, verification evidence, cadence-compliant commits. Use ce-debug/nk-debug for open-ended bugs. 执行实施单元、按计划实现、测试先行。
+description: Execute one implementation unit from a plan, an Issue, or a clear request: orient from docs/current.md, test-first implementation, verification evidence, cadence-compliant commits. Use nk-debug for open-ended bugs. 执行实施单元、按计划实现、测试先行。
 ---
 
 # /nk-work
@@ -50,7 +50,8 @@ description: Execute one implementation unit from a plan, an Issue, or a clear r
 ### 4. 单元完成与提交 (Unit Commit)
 * 单元验证通过后，读取 [`../nk-commit/SKILL.md`](../nk-commit/SKILL.md) 并按其规则发起提交：
   * 主题行包含成果说明，末尾追加实施单元编号，例如：`feat(auth): add token expiry check (U2)`；
-  * 正文写入 1~3 行实际运行的验证命令、结果与未验证项（K10）。
+  * 正文写入 1~3 行实际运行的验证命令、结果与未验证项（K10）；
+  * 若本单元修复了 `docs/reviews/` 中的审查条目，在同一提交中把该条目状态改为 `已修复`（格式与状态词表见 [`../nk-review/references/entry-format.md`](../nk-review/references/entry-format.md)；节奏见 R2/R6）。
 
 ### 5. 顺延或结束会话 (Next or Wrap up)
 * **顺延判断（K2）**：若当前上下文依然宽裕，且下一单元与本单元紧密相关，可顺延执行下一单元，重复步骤 2~4。

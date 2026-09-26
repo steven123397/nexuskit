@@ -1,6 +1,6 @@
 # 提交节奏规则与执行纪律 (Commit Cadence)
 
-> **归属与引用：** 本规则由 `/nk-commit` 唯一持有；`/nk-work`、`/nk-debug`、`/nk-compound`、`/nk-close`、`/nk-handoff` 全局统一引用，避免各技能各自制定冲突的提交标准。
+> **归属与引用：** 本规则由 `/nk-commit` 唯一持有；`/nk-work`、`/nk-debug`、`/nk-review`、`/nk-simplify`、`/nk-compound`、`/nk-close`、`/nk-handoff` 全局统一引用，避免各技能各自制定冲突的提交标准。
 
 ---
 

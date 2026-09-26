@@ -24,7 +24,7 @@ description: Close a delivered version before merge or release (close version, p
 3. **验证证据核对**：交付声明必须由实际运行过的测试或走查支撑；未运行的记为未验证而非通过（纪律见 commit-cadence 第三节）。证据缺失时警告用户，由用户决定是否继续收尾。
 
 ### 1. 遗留项转移与甄别
-* 检查 `docs/reviews/` 中的遗留条目（该目录由 `nk-review` 产生，此技能尚未提供；目录不存在则跳过并向用户说明），以及 `docs/plans/` 各 plan 中未完成的待办。
+* 检查 `docs/reviews/` 中的遗留条目（该目录由 `nk-review` 产生，条目的固定三值状态标记见 [`../nk-review/references/entry-format.md`](../nk-review/references/entry-format.md)；目录不存在则跳过并向用户说明），以及 `docs/plans/` 各 plan 中未完成的待办。
 * **未完成或推迟到后续版本的 plan 不随本技能删除**，逐项转入下方"用户决策点"流程；审查记录的遗留项转为 Issue（无 GitHub 远端时记入 `docs/backlog.md`，降级规则见生命周期矩阵）。
 
 ### 2. 价值提炼 (Harvest)

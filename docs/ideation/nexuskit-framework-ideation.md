@@ -219,7 +219,9 @@ NexusKit 是一套**个人体系**：用户画像是个人项目、同时使用�
 
 ## 九、开放问题
 
-1. **技能正文用中文还是英文**：影响各 Agent 的触发与遵循效果，建议 P1 时对 `description` 做一次对比试验。
-2. **refresh 是 `nk-compound` 的模式还是独立技能**：P3 时定。
-3. **共享约定的打包方式**：打包阶段定。
-4. **开发目录即加载目录**：`~/.agents/skills` 会被部分 Agent 直接加载，半成品技能会影响所有项目。需要确认哪些 Agent 会读取它；必要时开发期把技能放在子目录，定稿后再移出。
+> 2026-09-26 v0.1.0 收尾时更新：2–4 已关闭，仅 1 存续（转为 Issue #2，v1.1.0 处理）。
+
+1. **技能正文用中文还是英文**：**存续** → 转为 [Issue #2](https://github.com/steven123397/nexuskit-skills/issues/2)，v1.1.0 以"实弹观察 + 迷你对照实验兜底"处理。
+2. ~~**refresh 是 `nk-compound` 的模式还是独立技能**~~：**已关闭**（P3）——并入 `nk-compound` 审计模式。
+3. ~~**共享约定的打包方式**~~：**已关闭**（v0.1.0）——`skills/conventions/` 平级布局 + 最小 SKILL.md 使其成为第 18 个可安装单元，三形态路径几何一致；决策记录见 `docs/solutions/architecture-decisions/2026-09-26-distribution-layout.md`。
+4. ~~**开发目录即加载目录**~~：**已关闭**（2026-09-26）——仓库迁出 `~/.agents/skills`，加载经 junction 指向 `skills/` 内目录。

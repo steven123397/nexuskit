@@ -1,6 +1,7 @@
 # 当前状态
 
-- **所在分支**：`main`
+- **所在分支**：`main`（仓库已迁至 `D:\codex_project
+exuskit`）
 - **版本/里程碑**：P6 已完成——17 个技能就位（含无前缀的 `ask-ljq`）（沿用既定模式：子代理编写、Kimi Code 评审后分技能提交；`nk-wait-what` 源文仅 6 行，由 Kimi Code 直接编写）
 - **已具备能力**：
   - 共享约定 10 份：[`conventions/`](../conventions/)（新增 `issue-writing.md`：Issue 格式四原则，吸收 Matt AGENT-BRIEF）。
@@ -26,13 +27,7 @@
 
 按用户 2026-09-26 拍板的顺序推进（迁移验收往后移，先打包再实测）：
 
-- [ ] **迁仓库**（用户在新对话中执行，方案已定）：
-  1. `gh repo rename nexuskit-skills`（旧 URL 自动重定向）
-  2. `mv` 整个目录到 `D:\codex_project
-exuskit`（比 push+clone 省事：未跟踪文件与 .git 随目录一起走）
-  3. `git remote set-url origin git@github.com:steven123397/nexuskit-skills.git`
-  4. 重建加载目录：`~/.agents/skills` 下只建 `nk-*`、`ask-ljq`、`conventions` 的 junction（`mklink /J`，不需要管理员）
-  5. 验证：新位置 `python tests/run_checks.py` 全绿；客户端照常加载
+- [x] **迁仓库（2026-09-26 完成）**：仓库已在 `D:\codex_project\nexuskit`，GitHub 已改名 `nexuskit-skills`；加载目录 `~/.agents/skills` 只含 18 个 junction（`nk-*`、`ask-ljq`、`conventions`），由 PowerShell `New-Item -ItemType Junction` 建立。经验：跨盘 `mv` 是 copy+delete，源目录被本会话占用删不掉，清空内容后建 junction 即可；Git Bash 调 cmd 的 `mklink /J` 会被 MSYS 路径转换弄坏，用 PowerShell。
 - [x] **P6 已完成**：`nk-init`（首次启用初始化）+ `ask-ljq`（场景路由器，故意不带 nk- 前缀，作者个人元素）
 - [ ] **打包 v0.1.0**：三形态——Claude plugin、Kimi plugin（格式待查）、npx 安装器（仿 Matt skills-cli；conventions/ 随安装一起复制解决共享问题）
 - [ ] **迁移与验收**：paper-30min 从 CE 迁移到 NexusKit，首跑 nk-init；按 RFC 第八章先写迁移方案（产物处理、指令文档更新、CE 停用或并存、验收场景、迁移前打 tag 可回退）
